@@ -7,8 +7,11 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.KeyListener;
+import org.newdawn.slick.MouseListener;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
 import general.utils.FontUtils;
@@ -30,7 +33,6 @@ import general.utils.FontUtils;
  * - addUnauthorizeKey (Ajouter des key input, que tu ne veux pas qui soit détecté)
  *
  */
-@SuppressWarnings("serial")
 public class TextField extends TGDComponent{
 	
 	private String text;
@@ -56,9 +58,7 @@ public class TextField extends TGDComponent{
 	private ArrayList<Integer> unauthorizedKeys;
 	
 	private EnterActionListener listener;
-    private boolean onlyFigures;
-
-    public TextField(GameContainer container,float x,float y,float width,float height){
+	public TextField(GameContainer container,float x,float y,float width,float height){
 		super(container,x,y,width,height);
 
 		
@@ -69,42 +69,41 @@ public class TextField extends TGDComponent{
 		unauthorizedKeys.add(Input.KEY_DOWN);
 		unauthorizedKeys.add(Input.KEY_ENTER);
 
-
 	}
 
-    @Override
-    protected void initDefaultUI() {
+	@Override
+	protected void initDefaultUI() {
+		
+		setPlaceHolder("Entrez votre texte...");
+		setPlaceHolderTextSize(15);
+		setPlaceHolderColor(new Color(140,140,140));
+		setPlaceHolderFont(FontUtils.loadSystemFont("Verdana", Font.PLAIN, placeHolderTextSize));
+		
+		setText("");
+		setTextSize(15);
+		setTextColor(new Color(255,255,255));
+		setTextFont(FontUtils.loadSystemFont("Verdana", Font.BOLD, textSize));
+		
+		setPaddingLeft(10);
+		setPaddingRight(10);
+		setPaddingTop(7);
+		setPaddingBottom(7);
 
-        setPlaceHolder("Entrez votre texte...");
-        setPlaceHolderTextSize(15);
-        setPlaceHolderColor(new Color(140, 140, 140));
-        setPlaceHolderFont(FontUtils.loadSystemFont("Verdana", Font.PLAIN, placeHolderTextSize));
-
-        setText("");
-        setTextSize(15);
-        setTextColor(new Color(255, 255, 255));
-        setTextFont(FontUtils.loadSystemFont("Verdana", Font.BOLD, textSize));
-
-        setPaddingLeft(10);
-        setPaddingRight(10);
-        setPaddingTop(7);
-        setPaddingBottom(7);
-
-        setCursorEnabled(true);
-        setCursorColor(new Color(200, 5, 5));
-        setCursorWidth(2);
-
-        setBorderWidth(1);
-        setBorderColor(Color.white);
-
-        setCornerRadius(0);
-        setBackgroundColor(new Color(255, 255, 255, 0));
-
-        setHasFocus(false);
-        setMaxNumberOfLetter(-1);
-        setOnlyFigures(true);
-        setUpperCaseLock(false);
-    }
+		setCursorEnabled(true);
+		setCursorColor(new Color(200,5,5));
+		setCursorWidth(2);
+		
+		setBorderWidth(1);
+		setBorderColor(Color.white);
+		
+		setCornerRadius(0);
+		setBackgroundColor(new Color(255,255,255,0));
+		
+		setHasFocus(true);
+		setMaxNumberOfLetter(-1);
+		
+		setUpperCaseLock(false);
+	}
 	
 	//SLICK METHOD
 	@Override
@@ -123,13 +122,10 @@ public class TextField extends TGDComponent{
 			g.drawString(placeHolder, x+paddingLeft, y+paddingTop);
 			
 		}
-
 		if(cursorEnabled && (System.currentTimeMillis()-timeInit)%800<400 && hasFocus){
 			g.setColor(cursorColor);
 			g.fillRect(x+paddingLeft+Math.min(textFont.getWidth(text),getWidth()-paddingRight-paddingLeft), y+paddingTop,cursorWidth,getHeight()-paddingBottom-paddingTop);
 		}
-
-		g.resetFont();
 	}
 	
 	@Override
@@ -248,32 +244,7 @@ public class TextField extends TGDComponent{
 			hasFocus=false;
 		}
 		else if(!unauthorizedKeys.contains(key) && ((int)c)!=0 && (text.length()<maxNumberOfLetter || maxNumberOfLetter==-1) &&  (c+"").length()>0){
-
-		    if(key == Input.KEY_0) text += "0";
-            else if(key == Input.KEY_1 || key == Input.KEY_NUMPAD1) text += "1";
-            else if(key == Input.KEY_2 || key == Input.KEY_NUMPAD2) text += "2";
-            else if(key == Input.KEY_3 || key == Input.KEY_NUMPAD3) text += "3";
-            else if(key == Input.KEY_4 || key == Input.KEY_NUMPAD4) text += "4";
-            else if(key == Input.KEY_5 || key == Input.KEY_NUMPAD5) text += "5";
-            else if(key == Input.KEY_6 || key == Input.KEY_NUMPAD6) text += "6";
-            else if(key == Input.KEY_7 || key == Input.KEY_NUMPAD7) text += "7";
-            else if(key == Input.KEY_8 || key == Input.KEY_NUMPAD8) text += "8";
-            else if(key == Input.KEY_9 || key == Input.KEY_NUMPAD9) text += "9";
-            else if(c ==(char)0) text += "0";
-            else if(c ==(char)1) text += "1";
-            else if(c ==(char)2) text += "2";
-            else if(c ==(char)3) text += "3";
-            else if(c ==(char)4) text += "4";
-            else if(c ==(char)5) text += "5";
-            else if(c ==(char)6) text += "6";
-            else if(c ==(char)7) text += "7";
-            else if(c ==(char)8) text += "8";
-            else if(c ==(char)9) text += "9";
-            else{
-                if(!onlyFigures)text+=c;
-            }
-
-
+			text+=c;
 			if(upperCaseLock)text=text.toUpperCase();
 		}
 	}
@@ -332,11 +303,7 @@ public class TextField extends TGDComponent{
 		this.maxNumberOfLetter = maxNumberOfLetter;
 	}
 
-    public void setOnlyFigures(boolean onlyFigures) {
-        this.onlyFigures = onlyFigures;
-    }
-
-    public interface EnterActionListener{
+	public interface EnterActionListener{
 		void onEnterPressed();
 	}
 	

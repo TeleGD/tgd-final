@@ -14,7 +14,7 @@ public class UnfinishedMenu extends Menu{
 		super.setTitrePrincipal("Jeux buggues");
 		super.setTitreSecondaire("A vos risques et périls");
 		
-		super.setItems(tpb.World.GAME_NAME,sps.World.GAME_NAME,"Retour");
+		super.setItems(tpb.World.GAME_NAME,sps.World.GAME_NAME,cbl.World.GAME_NAME,lab.World.GAME_NAME,"Retour");
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);
@@ -36,6 +36,12 @@ public class UnfinishedMenu extends Menu{
 			game.enterState(sps.menus.NameMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 2:
+			game.enterState(cbl.MainMenuCbl.ID, new FadeOutTransition(),new FadeInTransition());
+			break;
+		case 3:
+			game.enterState(lab.World.ID, new FadeOutTransition(),new FadeInTransition());
+			break;
+		case 4:
 			game.enterState(MainMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		}

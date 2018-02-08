@@ -40,10 +40,16 @@ public class Main extends StateBasedGame{
 		addState(new PlayMenu());
 		addState(new UnfinishedMenu());
 		addState(new ToDoMenu());
+		addState(new ScoreMenu());
+		addState(new HighScorePlayerMenu());
 		addState(new sps.menus.NameMenu());
+		addState(new cbl.MainMenuCbl());
 		addState(new aow.World());
 		addState(new tpb.World());
 		addState(new sps.World());
+		addState(new t7l.World());
+		addState(new cbl.World());
+		addState(new lab.World());
 		this.enterState(WelcomeMenu.ID);
 	}
 }

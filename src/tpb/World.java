@@ -19,7 +19,7 @@ import java.util.*;
 public class World extends BasicGameState {
 	
 	public static int ID=77;
-	public static String GAME_NAME = "La Sainte Ventouse";
+	public final static String GAME_NAME = "La Sainte Ventouse";
 	private Player player;
 	private Dieu dieu;
 	

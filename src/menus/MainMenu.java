@@ -14,7 +14,7 @@ public class MainMenu extends Menu{
 		super.setTitrePrincipal("Jeux de TGD");
 		super.setTitreSecondaire("Tout n'est pas fini mais ça arrive :)");
 		
-		super.setItems("Jeux finis (ou à équilibrer)","A finir mais jouables","Non jouables (mais presque)","Quitter");
+		super.setItems("Jeux finis (ou à équilibrer)","A finir mais jouables","Non jouables (mais presque)","Scores","Quitter");
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);
@@ -39,6 +39,9 @@ public class MainMenu extends Menu{
 			game.enterState(ToDoMenu.ID, new FadeOutTransition(), new FadeInTransition());
 			break;
 		case 3:
+			game.enterState(ScoreMenu.ID, new FadeOutTransition(), new FadeInTransition());
+			break;
+		case 4:
 			System.out.println("exit");
 			System.exit(0);
 			break;

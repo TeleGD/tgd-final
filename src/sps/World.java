@@ -27,7 +27,7 @@ import sps.menus.MenuPrincipal;
 public class World extends BasicGameState {
 
 	public static int ID = 1;
-	public static String GAME_NAME = "Space Shooter";
+	public final static String GAME_NAME = "Space Shooter";
 	private static Player Nico;
 	private static ArrayList<Enemy> enemies;
 	private static ArrayList<Projectile> projectiles;

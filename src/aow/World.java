@@ -24,7 +24,7 @@ import java.util.*;
 public class World extends BasicGameState {
 	
 	public static int ID=7;
-	public static String GAME_NAME = "Age of War";
+	public static final String GAME_NAME = "Age of War";
 	public static Minion[] minions;
 
 	public static int damageDefault = 5;
