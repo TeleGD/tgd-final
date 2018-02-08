@@ -101,8 +101,8 @@ public class ScoreMenu extends BasicGameState implements EnterActionListener, On
 		for(int i=0;i<NB_GAME;i++)
 		{
 			String name = null;
-			if(i==0)name=cbl.World.GAME_NAME;
-			else if(i==1)name=t7l.World.GAME_NAME;
+			if(i==0)name=g_cbl.World.GAME_NAME;
+			else if(i==1)name=g_t7l.World.GAME_NAME;
 			g.setColor(new Color(255,0,0));
 			g.drawString(name,PADDING_LEFT+ i*LARGEUR_COLUMN+PADDING_LEFT_COLUMN+LARGEUR_COLUMN/2-g.getFont().getWidth(name), BEGIN_Y_TAB);
 			

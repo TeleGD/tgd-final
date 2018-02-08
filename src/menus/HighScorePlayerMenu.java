@@ -28,8 +28,8 @@ public class HighScorePlayerMenu extends Menu implements APIListener{
 		super.setTitreSecondaire(namePlayer);
 		
 		super.removeAllItems();
-		super.addItem("Score "+cbl.World.GAME_NAME +": "+player.getScoreAtGame(1));
-		super.addItem("Score "+t7l.World.GAME_NAME +": "+player.getScoreAtGame(2));
+		super.addItem("Score "+g_cbl.World.GAME_NAME +": "+player.getScoreAtGame(1));
+		super.addItem("Score "+g_t7l.World.GAME_NAME +": "+player.getScoreAtGame(2));
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);
@@ -70,8 +70,8 @@ public class HighScorePlayerMenu extends Menu implements APIListener{
 			player=(Person)content;
 			
 			super.removeAllItems();
-			super.addItem("Score "+cbl.World.GAME_NAME +": "+player.getScoreAtGame(1));
-			super.addItem("Score "+t7l.World.GAME_NAME +": "+player.getScoreAtGame(2));
+			super.addItem("Score "+g_cbl.World.GAME_NAME +": "+player.getScoreAtGame(1));
+			super.addItem("Score "+g_t7l.World.GAME_NAME +": "+player.getScoreAtGame(2));
 		}
 	}
 
