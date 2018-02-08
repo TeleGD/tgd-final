@@ -42,14 +42,15 @@ public class Main extends StateBasedGame{
 		addState(new ToDoMenu());
 		addState(new ScoreMenu());
 		addState(new HighScorePlayerMenu());
-		addState(new sps.menus.NameMenu());
-		addState(new cbl.MainMenuCbl());
-		addState(new aow.World());
-		addState(new tpb.World());
-		addState(new sps.World());
-		addState(new t7l.World());
-		addState(new cbl.World());
-		addState(new lab.World());
+		addState(new sps.menus.NameMenu()); // Space Shooter
+		addState(new cbl.MainMenuCbl()); // Cathedrale Bloxxx
+		addState(new rlv.NameMenu()); // RogueLikeAVirgin
+		addState(new aow.World()); // AgeOfWar
+		addState(new tpb.World()); // TetrisPolyBridge
+		addState(new sps.World()); 
+		addState(new t7l.World()); //T7Laser
+		addState(new cbl.World()); 
+		addState(new lab.World()); // Labyrinthe
 		this.enterState(WelcomeMenu.ID);
 	}
 }
