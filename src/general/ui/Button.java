@@ -1,20 +1,18 @@
 package general.ui;
 
-import java.awt.Font;
+import general.utils.FontUtils;
 import org.newdawn.slick.Color;
-import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.state.StateBasedGame;
 
-import general.utils.FontUtils;
+import java.awt.Font;
 
 
-@SuppressWarnings("serial")
 public class Button extends TGDComponent{
 
-	private String text;
+    private static final TrueTypeFont DEFAULT_TEXT_FONT = FontUtils.loadSystemFont("Verdana", Font.BOLD, 14);
+    private String text;
 	
 	private Color textColor;
 	private Color textColorEntered;
@@ -24,8 +22,11 @@ public class Button extends TGDComponent{
 	private int textSize;
 	
 	private boolean upperCaseLock;
+    private boolean selectable =false;
+    private boolean selected;
+    private Color backgroundColorSelected;
 
-	public Button(GameContainer container,float x,float y,float width,float height){
+    public Button(GameContainer container,float x,float y,float width,float height){
 		super(container,x,y,width,height);
 	}
 
@@ -43,7 +44,7 @@ public class Button extends TGDComponent{
 		setTextColor(new Color(255,255,255));
 		setTextColorPressed(new Color(255,255,255));
 		setTextColorEntered(new Color(0,0,0));
-		setTextFont(FontUtils.loadSystemFont("Verdana", Font.BOLD, textSize));
+		setTextFont(DEFAULT_TEXT_FONT);
 		
 		setPaddingTop(5);
 		setPaddingBottom(5);
@@ -57,8 +58,11 @@ public class Button extends TGDComponent{
 		setBackgroundColor(new Color(255,255,255,0));
 		setBackgroundColorEntered(new Color(255,255,255));
 		setBackgroundColorPressed(new Color(125,5,5));
+		setBackgroundColorSelected(getBackgroundColorPressed());
 		
 		setUpperCaseLock(false);
+		setVisible(true);
+		setSelectable(false);
 	}
 	
 	//SLICK METHOD
@@ -71,6 +75,7 @@ public class Button extends TGDComponent{
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		super.render(container, game, g);
+		if(!visible)return;
 
 		if(mousePressed)g.setColor(textColorPressed);
 		else if(mouseEntered)g.setColor(textColorEntered);
@@ -78,7 +83,7 @@ public class Button extends TGDComponent{
 
 		g.setFont(textFont);
 		g.drawString(text, x+paddingLeft+(getWidth()-paddingLeft-paddingRight)/2-textFont.getWidth(text)/2, y+paddingTop+(getHeight()-paddingTop-paddingBottom)/2-textFont.getHeight(text)/2);
-	
+		g.resetFont();
 	}
 	
 	//GETTERS AND SETTERS
@@ -117,8 +122,32 @@ public class Button extends TGDComponent{
 		this.textFont = textFont;
 	}
 
-	
-	public int getTextSize() {
+
+    @Override
+    public void mouseClicked(int type, int x, int y, int count) {
+        super.mouseClicked(type, x, y, count);
+        if (System.currentTimeMillis() - time > 300) hasFocus = false;
+        if (contains(x, y) && hasFocus && visible) {
+            if (selectable) {
+                selected = !selected;
+
+                if (selected) setBackgroundColor(getBackgroundColorSelected());
+                else setBackgroundColor(getBackgroundColorSelected());
+            }
+
+        }
+
+    }
+
+    @Override
+    public void mouseMoved(int ox, int oy, int x, int y) {
+        super.mouseMoved(ox, oy, x, y);
+        if(contains(x,y) && visible){
+            hasFocus = true;
+        }
+    }
+
+    public int getTextSize() {
 		return textSize;
 	}
 
@@ -151,7 +180,16 @@ public class Button extends TGDComponent{
 		this.textColorPressed = textColorPressed;
 	}
 
-	
-	
 
+    public void setSelectable(boolean selectable) {
+        this.selectable = selectable;
+    }
+
+    public Color getBackgroundColorSelected() {
+        return backgroundColorSelected;
+    }
+
+    public void setBackgroundColorSelected(Color backgroundColorSelected) {
+        this.backgroundColorSelected = backgroundColorSelected;
+    }
 }

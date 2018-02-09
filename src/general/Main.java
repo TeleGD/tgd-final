@@ -51,6 +51,8 @@ public class Main extends StateBasedGame{
 		addState(new g_t7l.World()); //T7Laser
 		addState(new g_cbl.World()); 
 		addState(new g_lab.World()); // Labyrinthe
+		addState(new g_snk.World()); // Snake
+		addState(new g_twd.World()); // TowerDefense
 		this.enterState(WelcomeMenu.ID);
 	}
 }

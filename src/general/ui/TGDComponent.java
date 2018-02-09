@@ -10,7 +10,6 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
-@SuppressWarnings("serial")
 public class TGDComponent extends Rectangle implements MouseListener, KeyListener{
 	public static final float AUTOMATIC = -1;
 
@@ -20,6 +19,7 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 	protected Color borderColor;
 	protected Color borderColorEntered;
 	protected Color borderColorPressed;
+    private Color backgroundColorFocused;
 
 
 	protected int borderWidth;
@@ -35,13 +35,13 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 	protected long time;
 
 	protected long timeInit;
+    protected boolean visible = true;
 
-	
-	public TGDComponent(GameContainer container,float x, float y, float width, float height) {
+
+    public TGDComponent(GameContainer container,float x, float y, float width, float height) {
 		super(x, y, width, height);
 		initDefaultUI();
 		timeInit=System.currentTimeMillis();
-
 
 		container.getInput().addMouseListener(this);
 		container.getInput().addKeyListener(this);
@@ -53,9 +53,9 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 		setBackgroundColorEntered(null);
 		setBackgroundColorPressed(null);
 		setBorderWidth(0);
-		
+
+		visible = true;
 		hasFocus=true;
-		
 	}
 	
 	public void update(GameContainer container,StateBasedGame game, int delta) throws SlickException{
@@ -63,12 +63,17 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 	}
 	
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+        if(!visible)return;
+
 		g.setAntiAlias(true);
 		g.resetLineWidth();
-		
+
 		time=System.currentTimeMillis();
 
-		if(mousePressed && backgroundColorPressed!=null)g.setColor(backgroundColorPressed);
+		if(hasFocus && backgroundColorFocused!=null){
+            g.setColor(backgroundColorFocused);
+        }
+		else if(mousePressed && backgroundColorPressed!=null)g.setColor(backgroundColorPressed);
 		else if(mouseEntered  && backgroundColorEntered!=null)g.setColor(backgroundColorEntered);
 		else g.setColor(backgroundColor);
 		
@@ -118,7 +123,9 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 	public void setBackgroundColorPressed(Color backgroundColorPressed) {
 		this.backgroundColorPressed = backgroundColorPressed;
 	}
-	
+    public void setBackgroundColorFocused(Color backgroundColorFocused) {
+        this.backgroundColorFocused = backgroundColorFocused;
+    }
 
 	public int getCornerRadius() {
 		return cornerRadius;
@@ -216,8 +223,9 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 	
 	@Override
 	public void mouseClicked(int type, int x, int y, int count) {
-		if( listener!=null){
-		    if(contains(x,y))listener.onClick(this);
+        if( listener!=null){
+            if(System.currentTimeMillis()-time>300)hasFocus=false;
+            if(contains(x,y) && hasFocus  && visible)listener.onClick(this);
         }
 	}
 
@@ -291,8 +299,12 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 	public void setOnClickListener(OnClickListener listener){
 		this.listener=listener;
 	}
-	
-	public interface OnClickListener{
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    public interface OnClickListener{
 		void onClick(TGDComponent componenent);
 	}
 	public boolean hasFocus() {

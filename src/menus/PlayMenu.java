@@ -14,7 +14,7 @@ public class PlayMenu extends Menu{
 		super.setTitrePrincipal("Jeux fonctionnels");
 		super.setTitreSecondaire("Vous pouvez jouer");
 		
-		super.setItems(g_aow.World.GAME_NAME,g_t7l.World.GAME_NAME,g_rlv.World.GAME_NAME,"Retour");
+		super.setItems(g_aow.World.GAME_NAME,g_t7l.World.GAME_NAME,g_rlv.World.GAME_NAME,g_snk.World.GAME_NAME,"Retour");
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);
@@ -39,6 +39,9 @@ public class PlayMenu extends Menu{
 			game.enterState(g_rlv.NameMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 3:
+			game.enterState(g_snk.World.ID, new FadeOutTransition(),new FadeInTransition());
+			break;
+		case 4:
 			game.enterState(MainMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		}
