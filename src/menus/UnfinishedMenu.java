@@ -5,7 +5,6 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
 
-
 public class UnfinishedMenu extends Menu{
 
 	public static int ID = -4;	
@@ -14,7 +13,7 @@ public class UnfinishedMenu extends Menu{
 		super.setTitrePrincipal("Jeux buggues");
 		super.setTitreSecondaire("A vos risques et périls");
 		
-		super.setItems(g_tpb.World.GAME_NAME,g_sps.World.GAME_NAME,g_cbl.World.GAME_NAME,g_lab.World.GAME_NAME,g_twd.World.GAME_NAME,"Retour");
+		super.setItems(g_tpb.World.GAME_NAME,g_sps.World.GAME_NAME,g_cbl.World.GAME_NAME,g_lab.World.GAME_NAME,g_twd.World.GAME_NAME,g_srv.worlds.CityWorld.GAME_NAME,g_wrm.World.GAME_NAME,"Retour");
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);
@@ -45,6 +44,12 @@ public class UnfinishedMenu extends Menu{
 			game.enterState(g_twd.World.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 5:
+			game.enterState(g_srv.worlds.CityWorld.ID, new FadeOutTransition(),new FadeInTransition());
+			break;
+		case 6:
+			game.enterState(g_wrm.menus.WormMenu.ID, new FadeOutTransition(),new FadeInTransition());
+			break;
+		case 7:
 			game.enterState(MainMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		}

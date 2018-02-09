@@ -42,6 +42,9 @@ public class Main extends StateBasedGame{
 		addState(new ToDoMenu());
 		addState(new ScoreMenu());
 		addState(new HighScorePlayerMenu());
+		addState(new g_wrm.LevelEditor());
+		addState(new g_wrm.menus.LoadLevelMenu());
+		addState(new g_wrm.menus.LoadPlayerMenu());
 		addState(new g_sps.menus.NameMenu()); // Space Shooter
 		addState(new g_cbl.MainMenuCbl()); // Cathedrale Bloxxx
 		addState(new g_rlv.NameMenu()); // RogueLikeAVirgin
@@ -53,6 +56,9 @@ public class Main extends StateBasedGame{
 		addState(new g_lab.World()); // Labyrinthe
 		addState(new g_snk.World()); // Snake
 		addState(new g_twd.World()); // TowerDefense
+		addState(new g_wrm.menus.WormMenu()); // Worms 3000
+		addState(new g_wrm.World());
+        addState(new g_srv.worlds.CityWorld()); // Survival
 		this.enterState(WelcomeMenu.ID);
 	}
 }

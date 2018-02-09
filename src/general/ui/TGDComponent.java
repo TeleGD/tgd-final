@@ -27,6 +27,10 @@ public class TGDComponent extends Rectangle implements MouseListener, KeyListene
 	protected float paddingTop=5, paddingBottom=5, paddingRight=5, paddingLeft=5;
 
 	protected boolean mousePressed;
+	public boolean isVisible() {
+		return visible;
+	}
+
 	protected boolean mouseEntered;
 	protected boolean hasFocus;
 
