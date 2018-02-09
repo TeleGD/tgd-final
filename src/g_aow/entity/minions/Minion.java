@@ -42,7 +42,7 @@ public class Minion {
 			xp = 50 * age * type;
 			damage = (int) (World.damageDefault * age * type);
 			HP = (int) (World.HPminion * age * type);
-			price = (int) (World.priceMinion * age * type);
+			price = (int) (World.priceMinion * age * type * 1.05);
 			try {
 				surprise=new Sound("musics/aow/surprise.ogg");
 			} catch (SlickException e1) {

@@ -102,9 +102,7 @@ public class Player {
 	
 	public void augmenteXp(int inc)
 	{
-		if (age < 3) {
-			xp+=inc;
-		}
+		xp+=inc;
 	}
 	
 	private boolean removeXp(int toRemove) {
@@ -119,8 +117,10 @@ public class Player {
 	
 	public void achatMinion(int type) {
 		
+		int price = World.priceMinion * type * age;
+		
 		if (ID==1 && World.board.getCase(0)==0 ) { //Teste si case de spawn vide
-			if (World.p1.removeGold(15*age*type)) { // teste si le joueur peut payer et l'encaisse si oui
+			if (World.p1.removeGold(price)) { // teste si le joueur peut payer et l'encaisse si oui
 				if (Math.random() > 0.95) {
 					type += 3;
 				}
@@ -129,7 +129,7 @@ public class Player {
 				World.t1.removeRail(3); // Le joueur recrute, il perd des rails
 			}
 		} else if (ID==2 && World.board.getCase(boardLength-1) == 0) {
-			if (World.p2.removeGold(15*age*type)) {
+			if (World.p2.removeGold(price)) {
 				if (Math.random() > 0.95) {
 					type += 3;
 				}
@@ -160,7 +160,8 @@ public class Player {
 		if(xp>=xpMax && age < 3)
 		{
 			age++;
-			xpMax=(int)(xpMax*3);
+			xp = 0; // On réinitialise l'xp à 0
+			xpMax=(int)(xpMax*2.5);
 			PVMax=(int)(PVMax*1.25);
 			PV=(int)(PV*1.25);
 			base1=new Image("images/aow/base_1_a"+age+".png");
@@ -207,14 +208,33 @@ public class Player {
 			g.setColor(Color.magenta);
 			g.drawString("Age : " + (int)(age), 8, 280);
 			
-			g.setColor(new Color(0,153,0));
-			g.fillRect(6, 200, 120, 18);
+			if (age<3) {
+				g.setColor(new Color(0,153,0));
+				g.fillRect(6, 200, 120, 18);
 		
-			g.setColor(new Color(0,255,0));
-			g.fillRect(6, 200, (int)(120*(double)(xp)/xpMax), 18);
+				g.setColor(new Color(0,255,0));
+				g.fillRect(6, 200, (int)(120*(double)(xp)/xpMax), 18);
 			
+				g.setColor(Color.white);
+				g.drawString(""+(int)(((double)(xp)/xpMax)*100)+" %", 8, 200);
+			} else {
+				g.setColor(Color.white);
+				g.drawString(""+xp+" xp", 8, 200);
+			}
+			
+			// Affichage des coûts des unités :
+
 			g.setColor(Color.white);
-			g.drawString(""+(int)(((double)(xp)/xpMax)*100)+" %", 8, 200);
+			g.drawString("[S] SPECIAL : " + (250*age) +" XP", 8, 135);
+			 			
+			g.setColor(Color.white);
+			g.drawString("[A] Soldat : " + (World.priceMinion * 1 * age) +" G", 8, 150);
+			 			
+			g.setColor(Color.white);
+			g.drawString("[Z] Distance : " + (World.priceMinion * 2 * age) +" G", 8, 165);
+			 			
+			g.setColor(Color.white);
+			g.drawString("[E] Elite : " + (World.priceMinion * 3 * age) +" G", 8, 180);
 			
 		}		
 		else // joueur 2
@@ -236,14 +256,33 @@ public class Player {
 			g.setColor(Color.magenta);
 			g.drawString("Age : " + (int)(age), 1153, 280);
 			
-			g.setColor(new Color(0,153,0));
-			g.fillRect(1151, 200, 120, 18);
+			if (age<3) {
+				g.setColor(new Color(0,153,0));
+				g.fillRect(1151, 200, 120, 18);
 		
-			g.setColor(new Color(0,255,0));
-			g.fillRect(1151, 200, (int)(120*(double)(xp)/xpMax), 18);
+				g.setColor(new Color(0,255,0));
+				g.fillRect(1151, 200, (int)(120*(double)(xp)/xpMax), 18);
 			
+				g.setColor(Color.white);
+				g.drawString(""+(int)(((double)(xp)/xpMax)*100)+" %", 1153, 200);
+			} else {
+				g.setColor(Color.white);
+				g.drawString(""+xp+" xp", 1153, 200);
+			}
+			
+			// Affichage des coûts des unités :
+				 		
 			g.setColor(Color.white);
-			g.drawString(""+(int)(((double)(xp)/xpMax)*100)+" %", 1153, 200);
+			g.drawString("[L] SPECIAL : " + (250*age) +" XP", 1100, 134);
+						
+			g.setColor(Color.white);
+			g.drawString("[I] Soldat : " + (World.priceMinion * 1 * age) +" G", 1100, 150);
+			 			
+			g.setColor(Color.white);
+			g.drawString("[O] Distance : " + (World.priceMinion * 2 * age) +" G", 1100, 165);
+					
+			g.setColor(Color.white);
+			g.drawString("[P] Elite : " + (World.priceMinion * 3 * age) +" G", 1100, 180);
 		}
 	}
 	
