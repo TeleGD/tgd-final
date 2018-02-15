@@ -20,9 +20,9 @@ public class World extends BasicGameState{
 
 	public final static String GAME_NAME="Labyrinthe";
 	public final static String GAME_FOLDER_NAME="lab";
-	public final static String DIRECTORY_SOUNDS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_MUSICS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_IMAGES="images"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_SOUNDS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_MUSICS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
 
 	private static Labyrinth labyrinth;
 	private static MazeGenerator mazeGenerator;

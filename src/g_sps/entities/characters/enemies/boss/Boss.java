@@ -25,7 +25,7 @@ public class Boss extends Enemy {
 	double startX;
 	double startY;
 	boolean arrive;
-	private String nameSprite = "images/sps/projectiles/bossShot01.png";
+	private String nameSprite = "ressources/images/sps/projectiles/bossShot01.png";
 
 	public Boss(double x, double y, Player player,ArrayList<Projectile> projectiles,Image[] img){
 		super(x,y,player,projectiles);

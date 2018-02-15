@@ -44,7 +44,7 @@ public class Tower {
 		this.range=range;
 		this.level=1;
 		try {
-			sprite = new Image("images/twd/TowerType"+type+"Level1.png");
+			sprite = new Image("ressources/images/twd/TowerType"+type+"Level1.png");
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}
@@ -101,7 +101,7 @@ public class Tower {
 		}
 		timer = 0;
 		try {
-			sprite = new Image("images/twd/TowerType"+type+"Level1.png");
+			sprite = new Image("ressources/images/twd/TowerType"+type+"Level1.png");
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}
@@ -138,7 +138,7 @@ public class Tower {
 			this.damage+=factor;
 			this.radius+=16;
 			try {
-				sprite = new Image("images/twd/TowerType"+type+"Level1.png");
+				sprite = new Image("ressources/images/twd/TowerType"+type+"Level1.png");
 			} catch (SlickException e) {
 				e.printStackTrace();
 			}
@@ -149,7 +149,7 @@ public class Tower {
 			this.damage+=factor;
 			this.attackSpeed-=300;
 			try {
-				sprite = new Image("images/twd/TowerType"+type+"Level"+level+".png");
+				sprite = new Image("ressources/images/twd/TowerType"+type+"Level"+level+".png");
 			} catch (SlickException e) {
 				e.printStackTrace();
 			}
@@ -160,7 +160,7 @@ public class Tower {
 			this.damage+=factor;
 			this.radius+=16;
 			try {
-				sprite = new Image("images/twd/TowerType"+type+"Level"+level+".png");
+				sprite = new Image("ressources/images/twd/TowerType"+type+"Level"+level+".png");
 			} catch (SlickException e) {
 				e.printStackTrace();
 			}
@@ -171,7 +171,7 @@ public class Tower {
 			this.damage+=factor;
 			this.attackSpeed-=300;
 			try {
-				sprite = new Image("images/twd/TowerType"+type+"Level"+level+".png");
+				sprite = new Image("ressources/images/twd/TowerType"+type+"Level"+level+".png");
 			} catch (SlickException e) {
 				e.printStackTrace();
 			}

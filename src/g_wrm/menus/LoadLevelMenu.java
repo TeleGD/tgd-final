@@ -31,7 +31,7 @@ public class LoadLevelMenu extends Menu{
     @Override
     public void enter(GameContainer container, StateBasedGame game) throws SlickException {
         super.enter(container, game);
-        String[] list = new File("levels/wrm").list();
+        String[] list = new File("ressources/levels/wrm").list();
 
         ArrayList<String> listfile = new ArrayList<>();
 

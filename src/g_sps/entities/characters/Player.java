@@ -26,7 +26,7 @@ public class Player extends g_sps.entities.Movable implements Circle{
 	private double compt;
 	private double speedshoot;
 	private int invulnerability;
-	private String nameSprite = "images/sps/projectiles/playerShot.png";
+	private String nameSprite = "ressources/images/sps/projectiles/playerShot.png";
 	
 	
 	public Player(double centerPointX, double centerPointY, int radius, ArrayList<Projectile> ProjectileList) {
@@ -38,14 +38,14 @@ public class Player extends g_sps.entities.Movable implements Circle{
 		this.speedshoot = 0.5;
 		this.invulnerability = 0;
 		try {
-			image=new Image("images/sps/ship/En3.png");
+			image=new Image("ressources/images/sps/ship/En3.png");
 			image=image.getScaledCopy((float) 0.05);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 			e.printStackTrace();
 		}
 		try {
-			imageInvul = new Image("images/sps/ship/En3Invulnerable.png");
+			imageInvul = new Image("ressources/images/sps/ship/En3Invulnerable.png");
 			imageInvul=imageInvul.getScaledCopy((float) 0.05);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement

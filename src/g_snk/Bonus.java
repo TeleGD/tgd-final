@@ -135,7 +135,7 @@ public class Bonus {
 	}
 	
 	private String imagePath(){
-		String path = "images/snk/";
+		String path = "ressources/images/snk/";
 		switch(type){
 		case bGrandis:
 			path+="Grand";

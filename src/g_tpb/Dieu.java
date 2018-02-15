@@ -22,7 +22,7 @@ public class Dieu {
 	
 	public Dieu() throws SlickException {
 		
-		sprite = new Image("images/tpb/dieu.png");
+		sprite = new Image("ressources/images/tpb/dieu.png");
 		x = 360;
 		y = 0;
 		speed = (float) 0.5;
@@ -43,13 +43,13 @@ public class Dieu {
 			for(int i = 0; i < 4; i++){
 				for(int j = 0; j < 4; j++) mat[i][j] = Math.random() > 0.5;
 			}
-			controlledBlock = new Tetris(mat, "images/tpb/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
+			controlledBlock = new Tetris(mat, "ressources/images/tpb/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
 			controlledBlock.setVy(0);
 			
 			for(int i = 0; i < 4; i++){
 				for(int j = 0; j < 4; j++) mat[i][j] = Math.random() > 0.5;
 			}
-			nextBlock = new Tetris(mat, "images/tpb/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
+			nextBlock = new Tetris(mat, "ressources/images/tpb/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
 			
 		} catch (SlickException e) {
 			e.printStackTrace();
@@ -141,7 +141,7 @@ public class Dieu {
 			nextBlock.setYcentre(64);
 			nextBlock.rotate(0);
 			controlledBlock = nextBlock;
-			nextBlock = new Tetris(mat, "images/tpb/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
+			nextBlock = new Tetris(mat, "ressources/images/tpb/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
 			controlledBlock.setVy(0);
 			controlledBlock.setXcentre((int) (x+16));
 			controlledBlock.rotate(0);

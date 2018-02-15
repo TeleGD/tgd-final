@@ -44,7 +44,7 @@ public class Minion {
 			HP = (int) (World.HPminion * age * type);
 			price = (int) (World.priceMinion * age * type * 1.05);
 			try {
-				surprise=new Sound("musics/aow/surprise.ogg");
+				surprise=new Sound("ressources/musics/aow/surprise.ogg");
 			} catch (SlickException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -58,14 +58,14 @@ public class Minion {
 			
 			try {
 				if (type <= 3) {
-					image=new Image("images/aow/stick_"+type+"_a"+age+".png");
-					this.bruit=new Sound("musics/aow/criWilhelm.ogg");
+					image=new Image("ressources/images/aow/stick_"+type+"_a"+age+".png");
+					this.bruit=new Sound("ressources/musics/aow/criWilhelm.ogg");
 				}
 				if (type >= 4 ) {
-					image=new Image("images/aow/stick_"+ (type - 3) +"_a"+age+".png");
+					image=new Image("ressources/images/aow/stick_"+ (type - 3) +"_a"+age+".png");
 					image=image.getScaledCopy((float) 2);
 					this.y -= 90;
-					this.bruit=new Sound("musics/aow/headshot.ogg");
+					this.bruit=new Sound("ressources/musics/aow/headshot.ogg");
 					surprise.play(1,(float) 0.5);
 				}
 				if (idOwner==2) {

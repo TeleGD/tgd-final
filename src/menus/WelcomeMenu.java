@@ -28,7 +28,7 @@ public class WelcomeMenu extends Menu implements OnClickListener{
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
 		super.init(container, game);
 		
-		background=new Image("images/LogoTGD_transparent.png");
+		background=new Image("ressources/images/LogoTGD_transparent.png");
 	}
 	
 	@Override

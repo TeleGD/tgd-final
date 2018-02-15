@@ -21,10 +21,10 @@ public class Enemy1 extends Enemy{
 		super(x, y);
 		hp=1;
 		try {
-			this.imgB=new Image("images/rlv/blobBas.png");
-			this.imgT=new Image("images/rlv/blobHaut.png");
-			this.imgR=new Image("images/rlv/blobDroite.png");
-			this.imgL=new Image("images/rlv/blobGauche.png");
+			this.imgB=new Image("ressources/images/rlv/blobBas.png");
+			this.imgT=new Image("ressources/images/rlv/blobHaut.png");
+			this.imgR=new Image("ressources/images/rlv/blobDroite.png");
+			this.imgL=new Image("ressources/images/rlv/blobGauche.png");
 			
 			this.sprite=imgB;
 		} catch (SlickException e) {

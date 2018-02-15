@@ -107,7 +107,7 @@ public class Projectile extends Rectangle {
             for(int i=0;i<path.length;i++){
                 images[i] = new Image(path[i]).getScaledCopy(0.8f);
             }
-            //image = images[0];
+            //image = ressources/images[0];
             this.setHeight(images[0].getHeight());
             this.setWidth(images[0].getWidth());
 

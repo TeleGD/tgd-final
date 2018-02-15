@@ -19,7 +19,7 @@ public class Enemy1 extends Enemy{
 	private double range; //range du deplacement
 	private Image image;
 	private boolean place;
-	private String nameSprite = "images/sps/projectiles/shot.png";
+	private String nameSprite = "ressources/images/sps/projectiles/shot.png";
 	
 
 	public Enemy1(double x, double y,double range,double startX,double startY, Player player, ArrayList<Projectile> projectiles) {
@@ -35,7 +35,7 @@ public class Enemy1 extends Enemy{
 		this.height=60;
 		this.score=20;
 		try {
-			image=new Image("images/sps/ship/enemy1.png");
+			image=new Image("ressources/images/sps/ship/enemy1.png");
 			image=image.getScaledCopy((float) 1);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement

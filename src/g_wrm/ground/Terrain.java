@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Terrain {
 
-    public static final String FOLDER_LEVEL = "levels/wrm";
+    public static final String FOLDER_LEVEL = "ressources/levels/wrm";
     private ArrayList<GroundPolygon> grounds = new ArrayList<GroundPolygon>();
     private String levelName;
 

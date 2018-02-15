@@ -54,14 +54,14 @@ public class World extends BasicGameState {
         menu.init(container, game);
 
         
-        sonMouette = new Sound("musics/snk/seagulls-chatting.ogg");
-        sonSncf = new Sound("musics/snk/0564.ogg");
-        sonChute = new Sound("musics/snk/0477.ogg");
-        sonCheval = new Sound("musics/snk/horse-whinnies.ogg");
-        sonEclair = new Sound("musics/snk/ChargedLightningAttack8-Bit.ogg");
-        sonMagic = new Sound("musics/snk/FreezeMagic.ogg");
-        sonMartien = new Sound("musics/snk/martian-gun.ogg");
-        sonPerdu = new Sound("musics/snk/perdu.ogg");
+        sonMouette = new Sound("ressources/musics/snk/seagulls-chatting.ogg");
+        sonSncf = new Sound("ressources/musics/snk/0564.ogg");
+        sonChute = new Sound("ressources/musics/snk/0477.ogg");
+        sonCheval = new Sound("ressources/musics/snk/horse-whinnies.ogg");
+        sonEclair = new Sound("ressources/musics/snk/ChargedLightningAttack8-Bit.ogg");
+        sonMagic = new Sound("ressources/musics/snk/FreezeMagic.ogg");
+        sonMartien = new Sound("ressources/musics/snk/martian-gun.ogg");
+        sonPerdu = new Sound("ressources/musics/snk/perdu.ogg");
         
         
         replay = new Button(container,World.longueur - widthBandeau+20, World.hauteur-150,widthBandeau-40,40);
@@ -323,7 +323,7 @@ public class World extends BasicGameState {
         snakes = new ArrayList<Snake>(Arrays.asList(snake));
 
         try {
-            soundMusicBackground=new Music("musics/snk/hymne_russe.ogg");
+            soundMusicBackground=new Music("ressources/musics/snk/hymne_russe.ogg");
             soundMusicBackground.loop(1,0.3f);
             jeuDemarre = true;
 

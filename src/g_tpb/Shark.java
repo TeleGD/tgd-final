@@ -15,8 +15,8 @@ public class Shark {
 	private Image shark;
 	private Image shark1;
 	private Image shark2;
-	private String urlShark1 = "images/tpb/requin1.png";
-	private String urlShark2 = "images/tpb/requin2.png";
+	private String urlShark1 = "ressources/images/tpb/requin1.png";
+	private String urlShark2 = "ressources/images/tpb/requin2.png";
 	
 	public Shark(int x, int dir) throws SlickException{
 		posx = x;

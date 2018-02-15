@@ -21,7 +21,7 @@ public class Planet extends Movable{
 		speedY=0.5;
 		this.y=y;
 		try {
-			image=new Image("images/sps/planet/planet12.png");
+			image=new Image("ressources/images/sps/planet/planet12.png");
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 			e.printStackTrace();

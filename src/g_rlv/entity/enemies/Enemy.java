@@ -19,7 +19,7 @@ public abstract class Enemy extends Entity {
 		this.atk=1;
 		World.enemies.add(this);
 		try {
-			this.sprite=new Image("images/rlv/blobBas.png");
+			this.sprite=new Image("ressources/images/rlv/blobBas.png");
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}

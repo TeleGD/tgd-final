@@ -27,10 +27,10 @@ public class Level {
 		nVague = 0;
 		pl = p;
 		try {
-			sprite0 = new Image("images/twd/chemin.png");
-			sprite1 = new Image("images/twd/mur.png");
-			sprite2 = new Image("images/twd/spawn.png");
-			base = new Image("images/twd/Base.png");
+			sprite0 = new Image("ressources/images/twd/chemin.png");
+			sprite1 = new Image("ressources/images/twd/mur.png");
+			sprite2 = new Image("ressources/images/twd/spawn.png");
+			base = new Image("ressources/images/twd/Base.png");
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

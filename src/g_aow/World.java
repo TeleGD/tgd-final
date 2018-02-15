@@ -70,11 +70,11 @@ public class World extends BasicGameState {
     	
     	// Minion m1 = new Minion(1, 1, 1);
     	// Minion m2 = new Minion(2, 1, 1);
-    	fond = new Image("images/aow/fond.png");
-    	fondBadEnd = new Image("images/aow/yoda.png");
-    	fondGoodEnd = new Image("images/aow/goodEnd.png");
-    	music1=new Music("musics/aow/age1.ogg");
-    	pegi = new Sound("musics/aow/pegi18.ogg");
+    	fond = new Image("ressources/images/aow/fond.png");
+    	fondBadEnd = new Image("ressources/images/aow/yoda.png");
+    	fondGoodEnd = new Image("ressources/images/aow/goodEnd.png");
+    	music1=new Music("ressources/musics/aow/age1.ogg");
+    	pegi = new Sound("ressources/musics/aow/pegi18.ogg");
     }
 
     @Override

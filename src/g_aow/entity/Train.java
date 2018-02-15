@@ -37,14 +37,14 @@ public class Train {
 			numJoueur=idOwner;
 			numRail=0;
 			try {
-				goodMusic = new Music("musics/aow/I_LIKE_TRAINS.ogg");
+				goodMusic = new Music("ressources/musics/aow/I_LIKE_TRAINS.ogg");
 
 			} catch (SlickException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			try {
-				picture=new Image("images/aow/track.png"); // a faire le nom
+				picture=new Image("ressources/images/aow/track.png"); // a faire le nom
 			} catch (SlickException e) {
 				// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 				e.printStackTrace();

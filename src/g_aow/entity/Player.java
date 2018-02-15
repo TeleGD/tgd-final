@@ -41,8 +41,8 @@ public class Player {
 	{
 		ID=num;
 		try {
-			sadMusic=new Music("musics/aow/sadMusic.ogg");
-			goodMusic = new Music("musics/aow/I_LIKE_TRAINS.ogg");
+			sadMusic=new Music("ressources/musics/aow/sadMusic.ogg");
+			goodMusic = new Music("ressources/musics/aow/I_LIKE_TRAINS.ogg");
 
 		} catch (SlickException e1) {
 			// TODO Auto-generated catch block
@@ -52,8 +52,8 @@ public class Player {
 		PV=HP;
 		PVMax=HP;
 		try {
-			base1=new Image("images/aow/base_1_a1.png");
-			base2=new Image("images/aow/base_2_a1.png");
+			base1=new Image("ressources/images/aow/base_1_a1.png");
+			base2=new Image("ressources/images/aow/base_2_a1.png");
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 			e.printStackTrace();
@@ -164,13 +164,13 @@ public class Player {
 			xpMax=(int)(xpMax*2.5);
 			PVMax=(int)(PVMax*1.25);
 			PV=(int)(PV*1.25);
-			base1=new Image("images/aow/base_1_a"+age+".png");
-			base2=new Image("images/aow/base_2_a"+age+".png");
+			base1=new Image("ressources/images/aow/base_1_a"+age+".png");
+			base2=new Image("ressources/images/aow/base_2_a"+age+".png");
 			
 			// Gestion musique du fond sonore : vérifie qu'il est le premier à lancer cette musique, sinon ne fait rien
 			if (needMusic()) {
 				try {
-					musicAge =new Music("musics/aow/age" + age + ".ogg");
+					musicAge =new Music("ressources/musics/aow/age" + age + ".ogg");
 
 				} catch (SlickException e1) {
 					// TODO Auto-generated catch block

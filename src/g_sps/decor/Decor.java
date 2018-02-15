@@ -18,7 +18,7 @@ public class Decor {
 		background=new Image[4];
 		for (int i=0;i<4;i++) {
 			try {
-				background[i]=new Image("images/sps/background/Space_"+(i+1)+".png");
+				background[i]=new Image("ressources/images/sps/background/Space_"+(i+1)+".png");
 			} catch (SlickException e) {
 				e.printStackTrace();
 			}

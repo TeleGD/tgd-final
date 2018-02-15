@@ -51,7 +51,7 @@ public class Enemy {
 			this.speed=0.1;
 			this.attack=5;
 			try {
-				sprite = new Image("images/twd/boss.png");
+				sprite = new Image("ressources/images/twd/boss.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -63,7 +63,7 @@ public class Enemy {
 			this.speed=0.12;
 			this.attack=1;
 			try {
-				sprite = new Image("images/twd/enemy1.png");
+				sprite = new Image("ressources/images/twd/enemy1.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -75,7 +75,7 @@ public class Enemy {
 			this.speed=0.15;
 			this.attack=1;
 			try {
-				sprite = new Image("images/twd/enemy2.png");
+				sprite = new Image("ressources/images/twd/enemy2.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

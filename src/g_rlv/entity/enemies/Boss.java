@@ -25,10 +25,10 @@ public class Boss extends Enemy{
 		hp=10;
 		compt=0;
 		try {
-			this.imgB=new Image("images/rlv/bossBas.png");
-			this.imgT=new Image("images/rlv/bossHaut.png");
-			this.imgR=new Image("images/rlv/bossDroite.png");
-			this.imgL=new Image("images/rlv/bossGauche.png");
+			this.imgB=new Image("ressources/images/rlv/bossBas.png");
+			this.imgT=new Image("ressources/images/rlv/bossHaut.png");
+			this.imgR=new Image("ressources/images/rlv/bossDroite.png");
+			this.imgL=new Image("ressources/images/rlv/bossGauche.png");
 			
 			this.sprite=imgB;
 		} catch (SlickException e) {

@@ -19,7 +19,7 @@ public class Sort {
 	
 	private int power; // puissance du sort
 	private int numJoueur; // de quel cote est le sort
-	private Image picture; // les images du sort associees à chaque epoque 
+	private Image picture; // les ressources/images du sort associees à chaque epoque 
 	private double x,y; // ira jusqu'au point culminant centre
 	private double pente=(30.0-350.0)/((World.board.getX(World.tailleBoard-1)-World.board.getX(0))/2); //difference de hauteur / longueur axe des x  ; 15 sera la hauteur max
 	private int i=0; //compteur d explosion
@@ -35,7 +35,7 @@ public class Sort {
 		if(age==1)
 		{
 			try {
-				picture=new Image("images/aow/rock.png"); // a faire le nom
+				picture=new Image("ressources/images/aow/rock.png"); // a faire le nom
 			} catch (SlickException e) {
 				// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 				e.printStackTrace();
@@ -46,7 +46,7 @@ public class Sort {
 			if(age==2)
 			{
 				try {
-					picture=new Image("images/aow/bullet.png"); // a faire le nom
+					picture=new Image("ressources/images/aow/bullet.png"); // a faire le nom
 				} catch (SlickException e) {
 					// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 					e.printStackTrace();
@@ -56,7 +56,7 @@ public class Sort {
 				if(age==3)
 				{
 					try {
-						picture=new Image("images/aow/rocket.png"); // a faire le nom
+						picture=new Image("ressources/images/aow/rocket.png"); // a faire le nom
 					} catch (SlickException e) {
 						// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 						e.printStackTrace();
@@ -123,10 +123,10 @@ public class Sort {
 			g.drawImage(picture, (float)(x-picture.getWidth()/2), (float)(y-picture.getHeight()/2));
 			
 			
-			if(y<=30) // explosion declenchee et des images a afficher
+			if(y<=30) // explosion declenchee et des ressources/images a afficher
 			{
 				try {
-					picture=new Image("images/aow/boom"+((i/8)+1)+".png"); 
+					picture=new Image("ressources/images/aow/boom"+((i/8)+1)+".png"); 
 				} catch (SlickException e) {
 					// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 					e.printStackTrace();

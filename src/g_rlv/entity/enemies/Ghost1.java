@@ -13,10 +13,10 @@ public class Ghost1 extends Enemy{
 		atk=2;
 		compt=0;
 		try {
-			this.imgB=new Image("images/rlv/fantomeBas.png");
-			this.imgT=new Image("images/rlv/fantomeHaut.png");
-			this.imgR=new Image("images/rlv/fantomeDroite.png");
-			this.imgL=new Image("images/rlv/fantomeGauche.png");
+			this.imgB=new Image("ressources/images/rlv/fantomeBas.png");
+			this.imgT=new Image("ressources/images/rlv/fantomeHaut.png");
+			this.imgR=new Image("ressources/images/rlv/fantomeDroite.png");
+			this.imgL=new Image("ressources/images/rlv/fantomeGauche.png");
 			
 			this.sprite=imgB;
 		} catch (SlickException e) {

@@ -23,10 +23,10 @@ public class Skull1 extends Enemy{
 		super(x, y);
 		hp=1;
 		try {
-			this.imgB=new Image("images/rlv/squeletteBas.png");
-			this.imgT=new Image("images/rlv/squeletteHaut.png");
-			this.imgR=new Image("images/rlv/squeletteDroite.png");
-			this.imgL=new Image("images/rlv/squeletteGauche.png");
+			this.imgB=new Image("ressources/images/rlv/squeletteBas.png");
+			this.imgT=new Image("ressources/images/rlv/squeletteHaut.png");
+			this.imgR=new Image("ressources/images/rlv/squeletteDroite.png");
+			this.imgL=new Image("ressources/images/rlv/squeletteGauche.png");
 			
 			this.sprite=imgB;
 		} catch (SlickException e) {

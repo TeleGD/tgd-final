@@ -27,8 +27,8 @@ public class Player {
 		g.setColor(Color.white);
 		g.drawString("Or : "+this.gold, 800, 656);
 		g.drawString("Vies : "+this.lives, 1000, 656);
-		g.drawImage(new Image("images/twd/bitcoincoin.png"), 730, 640);
-		g.drawImage(new Image("images/twd/Heart.png"), 930, 640);
+		g.drawImage(new Image("ressources/images/twd/bitcoincoin.png"), 730, 640);
+		g.drawImage(new Image("ressources/images/twd/Heart.png"), 930, 640);
 	}
 	
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {

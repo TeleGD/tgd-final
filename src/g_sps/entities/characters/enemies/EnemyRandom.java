@@ -29,7 +29,7 @@ public class EnemyRandom extends Enemy{
 	private Image image;
 	private boolean outOfBox;
 	private int i;
-	private String nameSprite = "images/sps/projectiles/shot.png";
+	private String nameSprite = "ressources/images/sps/projectiles/shot.png";
 	
 	public EnemyRandom(double x, double y, Player player, ArrayList<Projectile> projectiles, double xbox, double ybox, double widthbox, double heightbox) {
 		super(x, y, player,projectiles);
@@ -51,7 +51,7 @@ public class EnemyRandom extends Enemy{
 		this.score=40;
 		this.i=0;
 		try {
-			image=new Image("images/sps/ship/enemy4.png");
+			image=new Image("ressources/images/sps/ship/enemy4.png");
 			image=image.getScaledCopy((float) 0.5);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement

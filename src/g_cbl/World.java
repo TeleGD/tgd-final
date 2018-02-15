@@ -33,9 +33,9 @@ public class World extends BasicGameState implements OnClickListener, EnterActio
 	public final static String GAME_NAME="Cathedral Bloxx";
 	
 	public final static String GAME_FOLDER_NAME="cbl";
-	public final static String DIRECTORY_SOUNDS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_MUSICS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_IMAGES="images"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_SOUNDS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_MUSICS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
 	
 	private static int score = 0;
 	public static Pendulum pendulum;

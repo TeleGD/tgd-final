@@ -42,7 +42,7 @@ public class Bonus extends g_sps.entities.Movable implements Circle {
 		p = player;
 		this.type=numeroBonus;
 		try {
-			this.spriteBonus=new Image("images/sps/bonus/bonus"+this.type+".png");
+			this.spriteBonus=new Image("ressources/images/sps/bonus/bonus"+this.type+".png");
 		} catch (SlickException e) {
 			//en cas de probleme
 			e.printStackTrace();

@@ -28,7 +28,7 @@ public class Cell{
 		this.itsATrap=false;
 		//TODO LIGNE A CORRIGER PLUS TARD
 		try {
-			this.sprite = new Image("images/lab/noWalls.png");
+			this.sprite = new Image("ressources/images/lab/noWalls.png");
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -55,7 +55,7 @@ public class Cell{
 
 	public void autoSetSprite() throws SlickException {
 	// Automatically selects the right sprite 
-		String path_prefix = "images/lab/";
+		String path_prefix = "ressources/images/lab/";
 		
 		if(itsATrap) path_prefix+="Trapped/";
 		else if(giveScore) path_prefix+="Points/";

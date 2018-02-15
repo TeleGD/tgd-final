@@ -21,7 +21,7 @@ public class BossTurret extends Enemy {
 	double projY;
 	private Image img;
 	private float bossX,bossY;
-	private String nameSprite = "images/sps/projectiles/bossShot1.png";
+	private String nameSprite = "ressources/images/sps/projectiles/bossShot1.png";
 	private ArrayList <String> nameSpriteList;
 	
 	Enemy parent;
@@ -38,10 +38,10 @@ public class BossTurret extends Enemy {
 		this.img=img;
 		this.parent = parent;
 		nameSpriteList = new ArrayList<String>();
-		nameSpriteList.add("images/sps/projectiles/bossShot00.png");
-		nameSpriteList.add("images/sps/projectiles/bossShot01.png");
-		nameSpriteList.add("images/sps/projectiles/bossShot02.png");
-		nameSpriteList.add("images/sps/projectiles/bossShot03.png");
+		nameSpriteList.add("ressources/images/sps/projectiles/bossShot00.png");
+		nameSpriteList.add("ressources/images/sps/projectiles/bossShot01.png");
+		nameSpriteList.add("ressources/images/sps/projectiles/bossShot02.png");
+		nameSpriteList.add("ressources/images/sps/projectiles/bossShot03.png");
 
 		
 	}

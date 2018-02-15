@@ -59,9 +59,9 @@ public class World extends BasicGameState {
 		score=0;
 		compt=0;
 		name=null;
-		bossBody=new Image("images/sps/ship/BossBody.png");
-		bossTowerL=new Image("images/sps/ship/BossTowerL.png");
-		bossTowerR=new Image("images/sps/ship/BossTowerR.png");
+		bossBody=new Image("ressources/images/sps/ship/BossBody.png");
+		bossTowerL=new Image("ressources/images/sps/ship/BossTowerL.png");
+		bossTowerR=new Image("ressources/images/sps/ship/BossTowerR.png");
 		maj = false;
 	}
 	

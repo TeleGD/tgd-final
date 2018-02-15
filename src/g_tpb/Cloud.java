@@ -12,7 +12,7 @@ public class Cloud {
 	private double speed;
 
 	private Image cloud;
-	private String urlCloud = "images/tpb/cloud.png";
+	private String urlCloud = "ressources/images/tpb/cloud.png";
 	
 	public Cloud() throws SlickException{
     	cloud = new Image(urlCloud);

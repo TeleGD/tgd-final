@@ -17,11 +17,11 @@ public class SurvivalMain extends StateBasedGame{
 	
 	public final static String GAME_FOLDER_NAME="srv";
 	
-	public final static String DIRECTORY_IMAGES="images"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
 	
 	public static void main(String[] args) throws SlickException {
 		//Normalement c'est plus necessaire, c'est fait dans le setup du projet en theorie
-		//System.setProperty("org.lwjgl.librarypath", new File("natives").getAbsolutePath());
+		//System.setProperty("org.lwjgl.librarypath", new File("ressources/natives").getAbsolutePath());
 		AppGameContainer app = new AppGameContainer(new SurvivalMain(),longueur, hauteur, false);
 		app.setTargetFrameRate(60);
 		app.setVSync(true);

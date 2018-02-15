@@ -32,9 +32,9 @@ public class World extends BasicGameState {
 	public final static String GAME_NAME="RogueLikeAVirgin";
 
 	public final static String GAME_FOLDER_NAME="rlv";
-	public final static String DIRECTORY_SOUNDS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_MUSICS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_IMAGES="images"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_SOUNDS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_MUSICS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
 
 
 	public static ArrayList<Enemy> enemies,enemiesTmp;
@@ -63,8 +63,8 @@ public class World extends BasicGameState {
 		gameOn = false;
 		gameOver = false;
 		score = 0;
-		saxGuy=new Sound("musics/rlv/boss.ogg");
-		mainMusic=new Music("musics/rlv/music.ogg");
+		saxGuy=new Sound("ressources/musics/rlv/boss.ogg");
+		mainMusic=new Music("ressources/musics/rlv/music.ogg");
 		//Il faudra voir s'il faut bouger ces inits dans enter(...) si ca prend trop de temps
 		enemies = new ArrayList<Enemy>();
 		enemiesTmp = new ArrayList<Enemy>();

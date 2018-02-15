@@ -11,7 +11,7 @@ public class Bulle {
 	private int posy;
 
 	private Image bulle;
-	private String urlBulle = "images/tpb/bulle.png";
+	private String urlBulle = "ressources/images/tpb/bulle.png";
 	
 	public Bulle(int x, int y) throws SlickException{
     	bulle = new Image(urlBulle);

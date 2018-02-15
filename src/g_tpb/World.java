@@ -41,7 +41,7 @@ public class World extends BasicGameState {
 	private boolean gameOn,gameOver;
 	
 	private Image fond;
-	private String urlFond = "images/tpb/background.png";
+	private String urlFond = "ressources/images/tpb/background.png";
 	
 	private Cloud cloud;
 	
@@ -54,7 +54,7 @@ public class World extends BasicGameState {
     	gameOn = false;
 		gameOver = false;
     	
-    	mainMusic=new Music("musics/tpb/tetris.ogg");
+    	mainMusic=new Music("ressources/musics/tpb/tetris.ogg");
     	
     	fond = new Image(urlFond);
     	

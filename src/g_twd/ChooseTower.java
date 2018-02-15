@@ -40,10 +40,10 @@ public class ChooseTower {
 		
 		try{
 			for(int i = 1; i <= nbTower; i++){
-				sprite.add(new Image("images/twd/TowerModel"+i+".png"));
+				sprite.add(new Image("ressources/images/twd/TowerModel"+i+".png"));
 			}
-			sprite2 = new Image("images/twd/rock.png");
-			sprite3 = new Image("images/twd/wood.png");
+			sprite2 = new Image("ressources/images/twd/rock.png");
+			sprite3 = new Image("ressources/images/twd/wood.png");
 		}catch (SlickException e) {
 			e.printStackTrace();
 		}

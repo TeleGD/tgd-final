@@ -10,7 +10,7 @@ import org.newdawn.slick.util.ResourceLoader;
 
 public class FontUtils {
 
-	public static final String FONT_DIRECTORY_NAME="font";
+	public static final String FONT_DIRECTORY_NAME="ressources/font";
 	public static final String FONT_PATH=FONT_DIRECTORY_NAME+File.separator;
 	public static final boolean ENABLE_LOG=false;
 	

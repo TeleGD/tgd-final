@@ -2,14 +2,14 @@ package g_wrm.utils;
 
 public class PathUtils {
 
-	private static String Weapons = "images/wrm/Weapons/";
-	public static String UI = "images/wrm/UI/";
-	private static String Terrain = "images/wrm/Terrain/";
-	private static String Perso = "images/wrm/Perso/";
-	private static String OldTerrain = "images/wrm/OldTerrain/";
-	private static String OldPerso = "images/wrm/OldPerso/";
-	private static String Loot = "images/wrm/Loot/";
-	private static String Belette = "images/wrm/Belette/";
+	private static String Weapons = "ressources/images/wrm/Weapons/";
+	public static String UI = "ressources/images/wrm/UI/";
+	private static String Terrain = "ressources/images/wrm/Terrain/";
+	private static String Perso = "ressources/images/wrm/Perso/";
+	private static String OldTerrain = "ressources/images/wrm/OldTerrain/";
+	private static String OldPerso = "ressources/images/wrm/OldPerso/";
+	private static String Loot = "ressources/images/wrm/Loot/";
+	private static String Belette = "ressources/images/wrm/Belette/";
 	
 	public static String Bazooka = Weapons + "Bazooka.png";
 	public static String Bazooka_Bullet = Weapons + "Bazooka_Bullet.png";
@@ -65,11 +65,11 @@ public class PathUtils {
 
     public static String Background = UI + "Background/decor.png";
     public static String arrow = UI + "arrow.png";;
-    public static String machine_gun = "musics/wrm/machine_gun.ogg";
-    public static String Shotgun_sound = "musics/wrm/shotgun_sound.ogg";
-    public static String Menu_sound = "musics/wrm/menu.ogg";
-    public static String Bazooka_sound = "musics/wrm/bazooka_sound.ogg";
-    public static String Bellete_sound = "musics/wrm/belette.ogg";
+    public static String machine_gun = "ressources/musics/wrm/machine_gun.ogg";
+    public static String Shotgun_sound = "ressources/musics/wrm/shotgun_sound.ogg";
+    public static String Menu_sound = "ressources/musics/wrm/menu.ogg";
+    public static String Bazooka_sound = "ressources/musics/wrm/bazooka_sound.ogg";
+    public static String Bellete_sound = "ressources/musics/wrm/belette.ogg";
 
 
 

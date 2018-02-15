@@ -13,10 +13,10 @@ public class Ghost2 extends Ghost1{
 		atk=3;
 		compt=0;
 		try {
-			this.imgB=new Image("images/rlv/fantomeMocheBas.png");
-			this.imgT=new Image("images/rlv/fantomeMocheHaut.png");
-			this.imgR=new Image("images/rlv/fantomeMocheDroite.png");
-			this.imgL=new Image("images/rlv/fantomeMocheGauche.png");
+			this.imgB=new Image("ressources/images/rlv/fantomeMocheBas.png");
+			this.imgT=new Image("ressources/images/rlv/fantomeMocheHaut.png");
+			this.imgR=new Image("ressources/images/rlv/fantomeMocheDroite.png");
+			this.imgL=new Image("ressources/images/rlv/fantomeMocheGauche.png");
 			
 			this.sprite=imgB;
 		} catch (SlickException e) {

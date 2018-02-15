@@ -52,7 +52,7 @@ public class Player {
 		jumpSpeed=1;
 		this.hitBoxChar=hitBoxChar;
 		try {
-			image=new Image("images/tpb/player.png");
+			image=new Image("ressources/images/tpb/player.png");
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 			e.printStackTrace();
