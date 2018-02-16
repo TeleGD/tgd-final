@@ -42,23 +42,23 @@ public class Main extends StateBasedGame{
 		addState(new ToDoMenu());
 		addState(new ScoreMenu());
 		addState(new HighScorePlayerMenu());
-		addState(new g_wrm.LevelEditor());
-		addState(new g_wrm.menus.LoadLevelMenu());
-		addState(new g_wrm.menus.LoadPlayerMenu());
-		addState(new g_sps.menus.NameMenu()); // Space Shooter
-		addState(new g_cbl.MainMenuCbl()); // Cathedrale Bloxxx
-		addState(new g_rlv.NameMenu()); // RogueLikeAVirgin
-		addState(new g_aow.World()); // AgeOfWar
-		addState(new g_tpb.World()); // TetrisPolyBridge
-		addState(new g_sps.World()); 
-		addState(new g_t7l.World()); //T7Laser
-		addState(new g_cbl.World()); 
-		addState(new g_lab.World()); // Labyrinthe
-		addState(new g_snk.World()); // Snake
-		addState(new g_twd.World()); // TowerDefense
-		addState(new g_wrm.menus.WormMenu()); // Worms 3000
-		addState(new g_wrm.World());
-        addState(new g_srv.worlds.CityWorld()); // Survival
+		addState(new games.Worms3000.LevelEditor());
+		addState(new games.Worms3000.menus.LoadLevelMenu());
+		addState(new games.Worms3000.menus.LoadPlayerMenu());
+		addState(new games.SpaceShooter.menus.NameMenu()); // Space Shooter
+		addState(new games.CathedralBloxxx.MainMenuCbl()); // Cathedrale Bloxxx
+		addState(new games.RogueLikeAVirgin.NameMenu()); // RogueLikeAVirgin
+		addState(new games.AgeOfWar.World()); // AgeOfWar
+		addState(new games.LaSainteVentouse.World()); // TetrisPolyBridge
+		addState(new games.SpaceShooter.World()); 
+		addState(new games.T7Laser.World()); //T7Laser
+		addState(new games.CathedralBloxxx.World()); 
+		addState(new games.Labyrinthe.World()); // Labyrinthe
+		addState(new games.Snake.World()); // Snake
+		addState(new games.TowerDefense.World()); // TowerDefense
+		addState(new games.Worms3000.menus.WormMenu()); // Worms 3000
+		addState(new games.Worms3000.World());
+        addState(new games.Survival.worlds.CityWorld()); // Survival
 		this.enterState(WelcomeMenu.ID);
 	}
 }

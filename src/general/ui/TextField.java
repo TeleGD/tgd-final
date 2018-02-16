@@ -7,11 +7,8 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
-import org.newdawn.slick.KeyListener;
-import org.newdawn.slick.MouseListener;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.TrueTypeFont;
-import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
 import general.utils.FontUtils;
@@ -230,10 +227,12 @@ public class TextField extends TGDComponent{
 
 	
 	
+	@Override
 	public int getCornerRadius() {
 		return cornerRadius;
 	}
 
+	@Override
 	public void setCornerRadius(int cornerRadius) {
 		this.cornerRadius = cornerRadius;
 	}
@@ -255,7 +254,7 @@ public class TextField extends TGDComponent{
 			}
 			hasFocus=false;
 		}
-		else if(!unauthorizedKeys.contains(key) && ((int)c)!=0  &&  (c+"").length()>0){
+		else if(!unauthorizedKeys.contains(key) && (c)!=0  &&  (c+"").length()>0){
 
             if(key == Input.KEY_0) text += "0";
             else if(key == Input.KEY_1 || key == Input.KEY_NUMPAD1) text += "1";

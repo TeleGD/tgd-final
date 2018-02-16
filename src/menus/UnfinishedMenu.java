@@ -13,7 +13,7 @@ public class UnfinishedMenu extends Menu{
 		super.setTitrePrincipal("Jeux buggues");
 		super.setTitreSecondaire("A vos risques et périls");
 		
-		super.setItems(g_tpb.World.GAME_NAME,g_sps.World.GAME_NAME,g_cbl.World.GAME_NAME,g_lab.World.GAME_NAME,g_twd.World.GAME_NAME,g_srv.worlds.CityWorld.GAME_NAME,g_wrm.World.GAME_NAME,"Retour");
+		super.setItems(games.LaSainteVentouse.World.GAME_NAME,games.SpaceShooter.World.GAME_NAME,games.CathedralBloxxx.World.GAME_NAME,games.Labyrinthe.World.GAME_NAME,games.TowerDefense.World.GAME_NAME,games.Survival.worlds.CityWorld.GAME_NAME,games.Worms3000.World.GAME_NAME,"Retour");
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);
@@ -29,25 +29,25 @@ public class UnfinishedMenu extends Menu{
 	public void onOptionItemSelected(int position) {
 		switch (position) {
 		case 0:
-			game.enterState(g_tpb.World.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.LaSainteVentouse.World.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 1:
-			game.enterState(g_sps.menus.NameMenu.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.SpaceShooter.menus.NameMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 2:
-			game.enterState(g_cbl.MainMenuCbl.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.CathedralBloxxx.MainMenuCbl.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 3:
-			game.enterState(g_lab.World.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.Labyrinthe.World.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 4:
-			game.enterState(g_twd.World.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.TowerDefense.World.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 5:
-			game.enterState(g_srv.worlds.CityWorld.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.Survival.worlds.CityWorld.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 6:
-			game.enterState(g_wrm.menus.WormMenu.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.Worms3000.menus.WormMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 7:
 			game.enterState(MainMenu.ID, new FadeOutTransition(),new FadeInTransition());

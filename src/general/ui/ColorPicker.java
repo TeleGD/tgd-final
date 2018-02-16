@@ -67,7 +67,7 @@ public class ColorPicker extends TGDComponent {
             g.fillRect(x+paddingLeft+1,y+paddingTop+h/6*i+1,w-2,h/6-1);
             g.setColor(Color.black);
 
-            g.fillRect((float) (x+paddingLeft+1+(c[i]*(w-4))/255.0), (float) (y+paddingTop+h/6*i+1),4,h/6-1);
+            g.fillRect((float) (x+paddingLeft+1+(c[i]*(w-4))/255.0), y+paddingTop+h/6*i+1,4,h/6-1);
             g.setColor(Color.white);
 
             g.drawString(s+" : "+c[i],x+width/2-20,y+paddingTop+h/6*i+h/30);

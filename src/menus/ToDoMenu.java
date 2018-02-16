@@ -14,7 +14,7 @@ public class ToDoMenu extends Menu{
 		super.setTitrePrincipal("Jeux non-fonctionnels");
 		super.setTitreSecondaire("Fuyez pauvre fou !");
 		
-		super.setItems(/*aow.World.GAME_NAME,*/"Retour");
+		super.setItems(/*AgeOfWar.World.GAME_NAME,*/"Retour");
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);

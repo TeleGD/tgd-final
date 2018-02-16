@@ -14,7 +14,7 @@ public class PlayMenu extends Menu{
 		super.setTitrePrincipal("Jeux fonctionnels");
 		super.setTitreSecondaire("Vous pouvez jouer");
 		
-		super.setItems(g_aow.World.GAME_NAME,g_t7l.World.GAME_NAME,g_rlv.World.GAME_NAME,g_snk.World.GAME_NAME,"Retour");
+		super.setItems(games.AgeOfWar.World.GAME_NAME,games.T7Laser.World.GAME_NAME,games.RogueLikeAVirgin.World.GAME_NAME,games.Snake.World.GAME_NAME,"Retour");
 
 		super.setEnableClignote(false);
 		super.setCouleurClignote(Color.red);
@@ -30,16 +30,16 @@ public class PlayMenu extends Menu{
 	public void onOptionItemSelected(int position) {
 		switch (position) {
 		case 0:
-			game.enterState(g_aow.World.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.AgeOfWar.World.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 1:
-			game.enterState(g_t7l.World.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.T7Laser.World.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 2:
-			game.enterState(g_rlv.NameMenu.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.RogueLikeAVirgin.NameMenu.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 3:
-			game.enterState(g_snk.World.ID, new FadeOutTransition(),new FadeInTransition());
+			game.enterState(games.Snake.World.ID, new FadeOutTransition(),new FadeInTransition());
 			break;
 		case 4:
 			game.enterState(MainMenu.ID, new FadeOutTransition(),new FadeInTransition());

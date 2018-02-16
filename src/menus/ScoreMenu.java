@@ -29,7 +29,7 @@ public class ScoreMenu extends BasicGameState implements EnterActionListener, On
 
 	public static int ID=-10;
 	
-	private ArrayList<ArrayList<Person>> games=new ArrayList<ArrayList<Person>>();
+	private ArrayList<ArrayList<Person>> gameList=new ArrayList<ArrayList<Person>>();
 	
 	private static final int WIDTH_SEPARATOR = 5;
 	private static final int HEIGHT_ROW=45;
@@ -61,7 +61,7 @@ public class ScoreMenu extends BasicGameState implements EnterActionListener, On
 		TGDApi.setApiListener(this);
 		for(int i=0;i<NB_GAME;i++)
 		{
-			games.add(new ArrayList<Person>());
+			gameList.add(new ArrayList<Person>());
 			TGDApi.getScoreForGame(i+1,10);
 		}
 		fontHighScore=FontUtils.loadCustomFont("PressStart2P.ttf", Font.BOLD, 35);
@@ -101,8 +101,8 @@ public class ScoreMenu extends BasicGameState implements EnterActionListener, On
 		for(int i=0;i<NB_GAME;i++)
 		{
 			String name = null;
-			if(i==0)name=g_cbl.World.GAME_NAME;
-			else if(i==1)name=g_t7l.World.GAME_NAME;
+			if(i==0)name=games.CathedralBloxxx.World.GAME_NAME;
+			else if(i==1)name=games.T7Laser.World.GAME_NAME;
 			g.setColor(new Color(255,0,0));
 			g.drawString(name,PADDING_LEFT+ i*LARGEUR_COLUMN+PADDING_LEFT_COLUMN+LARGEUR_COLUMN/2-g.getFont().getWidth(name), BEGIN_Y_TAB);
 			
@@ -110,12 +110,12 @@ public class ScoreMenu extends BasicGameState implements EnterActionListener, On
 			if(i!=NB_GAME-1){
 				g.fillRoundRect(PADDING_LEFT+(i+1)*LARGEUR_COLUMN,BEGIN_Y_TAB,WIDTH_SEPARATOR,HAUTEUR_TABLEAU,3);	
 			}
-			if(games.size()>i){
-				for(int j=0;j<games.get(i).size();j++)
+			if(gameList.size()>i){
+				for(int j=0;j<gameList.get(i).size();j++)
 				{
 					g.drawString((j+1)+")",PADDING_LEFT+ i*LARGEUR_COLUMN+PADDING_LEFT_COLUMN, BEGIN_Y_TAB+(j+1)*HEIGHT_ROW);
-					g.drawString(games.get(i).get(j).getName(),PADDING_LEFT+55+ i*LARGEUR_COLUMN+PADDING_LEFT_COLUMN, BEGIN_Y_TAB+(j+1)*HEIGHT_ROW);
-					g.drawString(""+games.get(i).get(j).getScoreAtGame((i+1)), PADDING_LEFT+(i+1)*LARGEUR_COLUMN-PADDING_RIGHT_COLUMN-g.getFont().getWidth(games.get(i).get(j).getScoreAtGame(i+1)+""), BEGIN_Y_TAB+(j+1)*HEIGHT_ROW);
+					g.drawString(gameList.get(i).get(j).getName(),PADDING_LEFT+55+ i*LARGEUR_COLUMN+PADDING_LEFT_COLUMN, BEGIN_Y_TAB+(j+1)*HEIGHT_ROW);
+					g.drawString(""+gameList.get(i).get(j).getScoreAtGame((i+1)), PADDING_LEFT+(i+1)*LARGEUR_COLUMN-PADDING_RIGHT_COLUMN-g.getFont().getWidth(gameList.get(i).get(j).getScoreAtGame(i+1)+""), BEGIN_Y_TAB+(j+1)*HEIGHT_ROW);
 
 				}
 			}
@@ -164,7 +164,7 @@ public class ScoreMenu extends BasicGameState implements EnterActionListener, On
 
 		if(content instanceof ArrayList<?>){
 			ArrayList<Person> persons=((ArrayList<Person>)content);
-			games.set(persons.get(0).getGamesPlayed().get(0)-1,persons);
+			gameList.set(persons.get(0).getGamesPlayed().get(0)-1,persons);
 		}
 	}
 
