@@ -17,7 +17,7 @@ public class SurvivalMain extends StateBasedGame{
 	
 	public final static String GAME_FOLDER_NAME="Survival";
 	
-	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="ressources"+File.separator+"images"+File.separator+GAME_FOLDER_NAME+File.separator;
 	
 	public static void main(String[] args) throws SlickException {
 		//Normalement c'est plus necessaire, c'est fait dans le setup du projet en theorie

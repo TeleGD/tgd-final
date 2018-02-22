@@ -25,15 +25,15 @@ public class CityWorld extends World{
 	public void mapGeneration(int seed) throws SlickException
 	{
 		Image[] batiments = new Image[2];
-		batiments[0] = new Image(SurvivalMain.DIRECTORY_IMAGES + "/deccors/Batiments1.png");
-		batiments[1] = new Image(SurvivalMain.DIRECTORY_IMAGES + "/deccors/batiment2.png");
+		batiments[0] = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/Batiments1.png");
+		batiments[1] = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/batiment2.png");
 		
-		Image road0 = new Image(SurvivalMain.DIRECTORY_IMAGES + "/deccors/road0.png");
-		Image road1 = new Image(SurvivalMain.DIRECTORY_IMAGES + "/deccors/road1.png");
+		Image road0 = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/road0.png");
+		Image road1 = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/road1.png");
 		
 		addBackground(new RepeatBackground(new Image(SurvivalMain.DIRECTORY_IMAGES + "backgrounds/concrete0.jpg"), new Vector2(0,0)));
 		
-		addGameObject(new MapObject(new Image(SurvivalMain.DIRECTORY_IMAGES + "/deccors/road2.png"), new Vector2(-256,75), false));
+		addGameObject(new MapObject(new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/road2.png"), new Vector2(-256,75), false));
 		
 		for(int i=0; i<25; i++)
 		{
