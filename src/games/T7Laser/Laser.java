@@ -71,9 +71,9 @@ public class Laser {
 	
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g) throws SlickException {
 		if(!shooting)
-			g.setColor(Color.orange);
+			g.setColor(new Color(255,128,0,204));
 		else
-			g.setColor(Color.red);
+			g.setColor(new Color(255,0,0,204));
 		//Affichage
 		if(axe == 0) {
 			//horizontal

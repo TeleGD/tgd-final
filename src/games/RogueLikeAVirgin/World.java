@@ -401,7 +401,9 @@ public class World extends BasicGameState {
 			switch (key) {
 
 			case Input.KEY_BACK://.KEY_RETURN:
-				name=name.substring(0, name.length()-2);
+				if (name.length()>=2) {
+					name=name.substring(0, name.length()-2);
+				}
 				break;
 			case Input.KEY_ENTER :
 				name=name.replace("'", "''");
