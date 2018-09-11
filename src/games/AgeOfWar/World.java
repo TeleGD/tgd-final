@@ -137,7 +137,8 @@ public class World extends BasicGameState {
 					spells.remove(i);
 				}
 			}	
-    	} else if (backMenu) {
+    	}
+    	if (backMenu) {
     		game.enterState(MainMenu.ID, new FadeOutTransition(),new FadeInTransition());
     	}
     	if (debut) {
@@ -161,6 +162,10 @@ public class World extends BasicGameState {
     @Override
 	public void keyPressed(int key, char c){
 		p1.keyPressed(key, c);
+		if (key == Input.KEY_ESCAPE) {
+			escapePress=true;
+			backMenu=true;
+		}
 		if ((key == Input.KEY_ENTER || key == Input.KEY_ESCAPE ) && etat>=1 ) {
 			escapePress = true;
 			backMenu  = true;

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="ressources/lib/ibxm.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/jinput.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/jnlp.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/jorbis-0.0.15.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/lwjgl_util_applet.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/lwjgl.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/natives-linux.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/natives-mac.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/natives-windows.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/org.json.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/slick-examples.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/slick.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/sqlite-jdbc-3.15.1.jar"/>
+	<classpathentry kind="lib" path="ressources/lib/tinylinepp.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

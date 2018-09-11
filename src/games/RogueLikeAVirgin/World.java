@@ -46,7 +46,7 @@ public class World extends BasicGameState {
 	public static int score;
 
 	private Image coeur,coin;
-	private Button jouer,atkUp,speedUp,delayUp,oneUp,rejouer,pauseMode ;
+	private Button jouer,atkUp,speedUp,delayUp,oneUp,rejouer,pauseMode, exit ;
 	private int atkCoin,speedCoin,delayCoin,oneCoin;
 	private boolean gameOn,gameOver;
 	private static Sound saxGuy;
@@ -98,7 +98,7 @@ public class World extends BasicGameState {
 
 			}});
 
-		rejouer = new Button("Try again",container,786,294,TGDComponent.AUTOMATIC,TGDComponent.AUTOMATIC);
+		rejouer = new Button("Try again",container,786,234,TGDComponent.AUTOMATIC,TGDComponent.AUTOMATIC);
 		rejouer.setTextSize(32);
 		rejouer.setBackgroundColor(new Color(255,255,255));
 		rejouer.setSize(420,120);
@@ -117,7 +117,7 @@ public class World extends BasicGameState {
 
 			}});
 
-		pauseMode = new Button("Continue",container,786,294,TGDComponent.AUTOMATIC,TGDComponent.AUTOMATIC);
+		pauseMode = new Button("Continue",container,786,234,TGDComponent.AUTOMATIC,TGDComponent.AUTOMATIC);
 		pauseMode.setTextSize(32);
 		pauseMode.setBackgroundColor(new Color(255,255,255));
 		pauseMode.setSize(420,120);
@@ -134,7 +134,20 @@ public class World extends BasicGameState {
 				}
 
 			}});
+		
+		exit = new Button("Quitter",container,786,384,TGDComponent.AUTOMATIC,TGDComponent.AUTOMATIC);
+		exit.setTextSize(32);
+		exit.setBackgroundColor(new Color(255,255,255));
+		exit.setSize(420,120);
+		exit.setTextColor(Color.black);
+		exit.setPadding(70,100,70,100);
+		exit.setOnClickListener(new OnClickListener() {
 
+			@Override
+			public void onClick(TGDComponent componenent) {
+				game.enterState(menus.MainMenu.ID, new FadeInTransition(), new FadeOutTransition());
+			}});
+		
 		atkUp = new Button("Puissance Up",container,780,570,TGDComponent.AUTOMATIC,30);
 		atkUp.setBackgroundColor(new Color(255,255,255));
 		atkUp.setTextColor(Color.black);
@@ -277,6 +290,7 @@ public class World extends BasicGameState {
 				jouer.render(container, game, g);
 			} else if (!gameOn && gameOver){
 				rejouer.render(container, game, g);
+				exit.render(container, game, g);
 			}
 
 			if (gameOn){
@@ -299,6 +313,7 @@ public class World extends BasicGameState {
 
 				if(pause) {
 					pauseMode.render(container,game,g);
+					exit.render(container, game, g);
 				}else {
 
 					g.setLineWidth(36);
@@ -389,6 +404,9 @@ public class World extends BasicGameState {
 
 	@Override
 	public void keyPressed(int key, char c) {
+		if ((pause || gameOver) && key == Input.KEY_ESCAPE) {
+			game.enterState(menus.MainMenu.ID, new FadeInTransition(), new FadeOutTransition());
+		}
 		if(scoreTime){
 			if(!maj && !(key==Input.KEY_LSHIFT &&!(key==Input.KEY_ENTER))) {
 				name+=c;
