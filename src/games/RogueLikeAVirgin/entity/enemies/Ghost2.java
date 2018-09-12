@@ -13,11 +13,11 @@ public class Ghost2 extends Ghost1{
 		atk=3;
 		compt=0;
 		try {
-			this.imgB=new Image("ressources/images/RogueLikeAVirgin/fantomeMocheBas.png");
-			this.imgT=new Image("ressources/images/RogueLikeAVirgin/fantomeMocheHaut.png");
-			this.imgR=new Image("ressources/images/RogueLikeAVirgin/fantomeMocheDroite.png");
-			this.imgL=new Image("ressources/images/RogueLikeAVirgin/fantomeMocheGauche.png");
-			
+			this.imgB=new Image("images/RogueLikeAVirgin/fantomeMocheBas.png");
+			this.imgT=new Image("images/RogueLikeAVirgin/fantomeMocheHaut.png");
+			this.imgR=new Image("images/RogueLikeAVirgin/fantomeMocheDroite.png");
+			this.imgL=new Image("images/RogueLikeAVirgin/fantomeMocheGauche.png");
+
 			this.sprite=imgB;
 		} catch (SlickException e) {
 			e.printStackTrace();
@@ -26,5 +26,5 @@ public class Ghost2 extends Ghost1{
 		this.height=36;
 		this.hitbox=new Rectangle (x+4,y+5,width-7,height-10);
 	}
-	
+
 }

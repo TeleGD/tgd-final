@@ -19,48 +19,48 @@ public class ChooseTower {
 	private Image sprite2;
 	private Image sprite3;
 	private ArrayList<Image> sprite;
-	
+
 	private int nbTower = 5;
 	public int choose;
 	private int chooseOld;
 	private boolean deselect;
-	
+
 	Player player;
-	
+
 	public ChooseTower(Player player) throws SlickException{
 		lenX = 16;
 		x = 0 + 2*lenX;
 		y = 720 - 6*lenX;
-		
+
 		choose = 0;
 		chooseOld = 0;
 		deselect = false;
-		
+
 		sprite = new ArrayList<Image>();
-		
+
 		try{
 			for(int i = 1; i <= nbTower; i++){
-				sprite.add(new Image("ressources/images/TowerDefense/TowerModel"+i+".png"));
+				sprite.add(new Image("images/TowerDefense/TowerModel"+i+".png"));
 			}
-			sprite2 = new Image("ressources/images/TowerDefense/rock.png");
-			sprite3 = new Image("ressources/images/TowerDefense/wood.png");
+			sprite2 = new Image("images/TowerDefense/rock.png");
+			sprite3 = new Image("images/TowerDefense/wood.png");
 		}catch (SlickException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g){
 		int i;
-		
-		//g.setColor(Color.black);		
+
+		//g.setColor(Color.black);
 		//g.fillRect(0, (float)y-8, (float)1280, (float)(720 - ((float)y-8)));
-		
+
 		for(i = 0; 0 + i*32 - 8 < 700; i++){
 			for(int j = 0; y + j * 32 - 16< 720; j++){
 				g.drawImage(sprite3, (float)0 + i*32 - 8, (float)y - 16 +j*32);
 			}
 		}
-		
+
 		for(i = 0; 700 + i*32 - 8 < 1280; i++){
 			for(int j = 0; y + j * 32 - 16< 720; j++){
 				g.drawImage(sprite2, (float)700 + i*32 - 8, (float)y - 16 +j*32);
@@ -75,16 +75,16 @@ public class ChooseTower {
 			}
 			g.fillRect((float)x + i*7*lenX, y, (float)lenX*5, (float)lenX*5);
 		}
-		
+
 		for(i = 0; i < nbTower; i++){
 			g.drawImage(sprite.get(i), (float)x + i*7*lenX + 8, (float)y + 8);
 		}
 	}
-	
+
 	public boolean update(int abs, int ord) throws SlickException {
 		return click(abs, ord);
 	}
-	
+
 	public boolean click(int abs, int ord){
 		if(ord >= y){
 			if(abs >= x){

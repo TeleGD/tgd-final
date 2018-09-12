@@ -19,10 +19,10 @@ public class Dieu {
 	private boolean left,right,rightLeft,down,up,upDown,rotLeft,rotRight,rotrot,drop;
 	private float x,y,controlledBlockX,controlledBlockY,speed,controlledBlockSpeed;
 	private Tetris controlledBlock,nextBlock;
-	
+
 	public Dieu() throws SlickException {
-		
-		sprite = new Image("ressources/images/LaSainteVentouse/dieu.png");
+
+		sprite = new Image("images/LaSainteVentouse/dieu.png");
 		x = 360;
 		y = 0;
 		speed = (float) 0.5;
@@ -37,31 +37,31 @@ public class Dieu {
 		rotrot = false;
 		drop = false;
 		boolean[][] mat = new boolean[4][4];
-		
+
 		try {
 			//G�n�ration de la pi�ce de d�part et de la suivante
 			for(int i = 0; i < 4; i++){
 				for(int j = 0; j < 4; j++) mat[i][j] = Math.random() > 0.5;
 			}
-			controlledBlock = new Tetris(mat, "ressources/images/LaSainteVentouse/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
+			controlledBlock = new Tetris(mat, "images/LaSainteVentouse/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
 			controlledBlock.setVy(0);
-			
+
 			for(int i = 0; i < 4; i++){
 				for(int j = 0; j < 4; j++) mat[i][j] = Math.random() > 0.5;
 			}
-			nextBlock = new Tetris(mat, "ressources/images/LaSainteVentouse/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
-			
+			nextBlock = new Tetris(mat, "images/LaSainteVentouse/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
+
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}
-		
+
 		//T�l�portation de la premi�re pi�ce g�n�r�e sous dieu.
 		//Pour une raison qui m'�chappe, le rotate t�l�porte la hitbox au bon endroit (aka autour du centre qu'on vient de d�finir)
 		controlledBlock.setXcentre((int) (x+16));
 		controlledBlock.rotate(0);
 
 	}
-	
+
 	public boolean checkCollision(Tetris t) {
 	//V�rifie les collisions entre la pi�ce courante et t
 	//On v�rifie les intersections bloc par bloc, mais on s'arr�te d�s qu'on en trouve une
@@ -78,16 +78,16 @@ public class Dieu {
 				}
 			}
 		}
-		
-		
+
+
 		return false;
 	}
-	
+
 	public void dropBlock() {
 		//D�clenche la chute de la pi�ce courante
 		controlledBlock.setVy(0.5);
 	}
-	
+
 	public String randomCat(){
 		//Renvoie une cat�gorie al�atoire pour la pi�ce en cours de construction
 		String cat = "";
@@ -125,15 +125,15 @@ public class Dieu {
 		}
 		return cat;
 	}
-	
+
 	public void nextBlock() {
 		//G�re le passage � la pi�ce suivante : g�n�ration de la nouvelle pi�ce, t�l�portation sous dieu, et changement de la pi�ce.
 		boolean[][] mat = new boolean[4][4];
-		
+
 		for(int i = 0; i < 4; i++){
 			for(int j = 0; j < 4; j++) mat[i][j] = Math.random() > 0.5;
 		}
-		
+
 		try {
 			if(controlledBlock.getYcentre()>100)World.addTetrisList(controlledBlock);
 			nextBlock.setVy(0);
@@ -141,7 +141,7 @@ public class Dieu {
 			nextBlock.setYcentre(64);
 			nextBlock.rotate(0);
 			controlledBlock = nextBlock;
-			nextBlock = new Tetris(mat, "ressources/images/LaSainteVentouse/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
+			nextBlock = new Tetris(mat, "images/LaSainteVentouse/Bloc"+(int)Math.floor(1+7*Math.random())+randomCat()+".png");
 			controlledBlock.setVy(0);
 			controlledBlock.setXcentre((int) (x+16));
 			controlledBlock.rotate(0);
@@ -152,9 +152,9 @@ public class Dieu {
 
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		move(delta);
-		
+
 		if(drop){
-		
+
 			for(Block[] row : controlledBlock.getMatrice()){
 				if(row == null) continue;
 				for(Block b : row){
@@ -179,7 +179,7 @@ public class Dieu {
 					}
 				}
 			}
-			
+
 			if(World.getTetrisList().size() >= 1){
 				for(Tetris t : World.getTetrisList()){
 					if(checkCollision(t)){
@@ -191,17 +191,17 @@ public class Dieu {
 				}
 			}
 		}
-		
+
 		controlledBlock.update(container, game, delta);
-		
-		
+
+
 	}
-	
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		g.drawImage(sprite,x,y);
 		controlledBlock.render(container,game,g);
 	}
-	
+
 	public void keyPressed(int key, char c) {
 		switch (key){
 		case Input.KEY_Z:
@@ -234,7 +234,7 @@ public class Dieu {
 			break;
 		}
 	}
-	
+
 	public void keyReleased(int key, char c) {
 		switch (key) {
 		case Input.KEY_Z:
@@ -259,7 +259,7 @@ public class Dieu {
 			break;
 		}
 	}
-	
+
 	public void move(int dt){
 		//D�place dieu en accord avec les commandes du joueur
 		int moveX = 0;
@@ -286,9 +286,9 @@ public class Dieu {
 			controlledBlock.rotate(-0.1);
 		}
 	}
-	
+
 	//Getters
-	
+
 	public Image getSprite(){
 		return this.sprite;
 	}
@@ -332,7 +332,7 @@ public class Dieu {
 	public boolean isRotrot() {
 		return rotrot;
 	}
-	
+
 	public boolean space() {
 		return drop;
 	}
@@ -360,7 +360,7 @@ public class Dieu {
 	public Tetris getNextBlock() {
 		return nextBlock;
 	}
-	
+
 	//Setters
 
 	public void setSprite(Image s) {
@@ -402,7 +402,7 @@ public class Dieu {
 	public void setRotrot(boolean rotrot) {
 		this.rotrot = rotrot;
 	}
-	
+
 	public void setSpace(boolean space) {
 		this.drop = space;
 	}
@@ -434,5 +434,5 @@ public class Dieu {
 	public void setNextBlock(Tetris nextBlock) {
 		this.nextBlock = nextBlock;
 	}
-	
+
 }

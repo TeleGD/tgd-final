@@ -2,15 +2,15 @@ package games.Worms3000.utils;
 
 public class PathUtils {
 
-	private static String Weapons = "ressources/images/Worms3000/Weapons/";
-	public static String UI = "ressources/images/Worms3000/UI/";
-	private static String Terrain = "ressources/images/Worms3000/Terrain/";
-	private static String Perso = "ressources/images/Worms3000/Perso/";
-	private static String OldTerrain = "ressources/images/Worms3000/OldTerrain/";
-	private static String OldPerso = "ressources/images/Worms3000/OldPerso/";
-	private static String Loot = "ressources/images/Worms3000/Loot/";
-	private static String Belette = "ressources/images/Worms3000/Belette/";
-	
+	private static String Weapons = "images/Worms3000/Weapons/";
+	public static String UI = "images/Worms3000/UI/";
+	private static String Terrain = "images/Worms3000/Terrain/";
+	private static String Perso = "images/Worms3000/Perso/";
+	private static String OldTerrain = "images/Worms3000/OldTerrain/";
+	private static String OldPerso = "images/Worms3000/OldPerso/";
+	private static String Loot = "images/Worms3000/Loot/";
+	private static String Belette = "images/Worms3000/Belette/";
+
 	public static String Bazooka = Weapons + "Bazooka.png";
 	public static String Bazooka_Bullet = Weapons + "Bazooka_Bullet.png";
 	public static String Bazooka_Belette = Weapons+"Bazooka_Belette.png";
@@ -18,9 +18,9 @@ public class PathUtils {
 	public static String Shotgun = Weapons + "Shotgun.png";
 	public static String Sword = Weapons + "Sword.png";
 	public static String Uzy = Weapons + "Uzy.png";
-	
+
 	public static String HPBar = UI + "HPBar.png";
-	
+
 	public static String Dirt = Terrain + "Dirt_Old.png";
 	public static String DirtMap_1 = Terrain + "DirtMap_1.png";
 	public static String DirtMap_2 = Terrain + "DirtMap_2.png";
@@ -31,17 +31,17 @@ public class PathUtils {
 	private static String Idle = Perso + "Idle/";
 	private static String Jump = Perso + "Jump/";
 	private static String Walk = Perso + "Walk/";
-	
+
 	public static String PersoLeftBlu = Idle + "PersoLeftBlu.png";
 	public static String PersoLeftRed = Idle + "PersoLeftRed.png";
 	public static String PersoRightBlu = Idle + "PersoRightBlu.png";
 	public static String PersoRightRed = Idle + "PersoRightRed.png";
-	
+
 	public static String PersoLeftBluJump = Jump + "PersoLeftBluJump.png";
 	public static String PersoLeftRedJump = Jump + "PersoLeftRedJump.png";
 	public static String PersoRightBluJump = Jump + "PersoRightBluJump.png";
 	public static String PersoRightRedJump = Jump + "PersoRightRedJump.png";
-	
+
 	public static String PersoLeftBluWalk = Walk + "PersoLeftBluWalk.png";
 	public static String PersoLeftRedWalk = Walk + "PersoLeftRedWalk.png";
 	public static String PersoRightBluWalk = Walk + "PersoRightBluWalk.png";
@@ -52,24 +52,24 @@ public class PathUtils {
 	public static String DiagMiniD = OldTerrain + "DiagMiniD.png";
 	public static String DiagMiniG = OldTerrain + "DiagMiniG.png";
 	public static String Horizontal = OldTerrain + "Horizontal.png";
-	
+
 	public static String Blu = OldPerso + "Blu.png";
 	public static String Red = OldPerso + "Red.png";
-	
+
 	public static String AmmoCrate = Loot + "AmmoCrate.png";
 	public static String HealthCrate = Loot + "HealthCrate.png";
 	public static String Parachute = Loot + "Parachute.png";
-	
+
 	public static String Belette_1 = Belette + "Belette_1.png";
 	public static String Belette_2 = Belette + "Belette_2.png";
 
     public static String Background = UI + "Background/decor.png";
     public static String arrow = UI + "arrow.png";;
-    public static String machine_gun = "ressources/musics/Worms3000/machine_gun.ogg";
-    public static String Shotgun_sound = "ressources/musics/Worms3000/shotgun_sound.ogg";
-    public static String Menu_sound = "ressources/musics/Worms3000/menu.ogg";
-    public static String Bazooka_sound = "ressources/musics/Worms3000/bazooka_sound.ogg";
-    public static String Bellete_sound = "ressources/musics/Worms3000/belette.ogg";
+    public static String machine_gun = "musics/Worms3000/machine_gun.ogg";
+    public static String Shotgun_sound = "musics/Worms3000/shotgun_sound.ogg";
+    public static String Menu_sound = "musics/Worms3000/menu.ogg";
+    public static String Bazooka_sound = "musics/Worms3000/bazooka_sound.ogg";
+    public static String Bellete_sound = "musics/Worms3000/belette.ogg";
 
 
 

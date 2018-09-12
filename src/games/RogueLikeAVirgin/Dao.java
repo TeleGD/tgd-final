@@ -77,7 +77,7 @@ public class Dao {
 			c = DriverManager.getConnection("jdbc:sqlite:datas.db");
 			stmt=c.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM SCORES ORDER BY SCORE DESC");
-			
+
 			while(rs.next()) {
 				result.add(new Doublet(rs.getString(1),rs.getInt(2)));
 			}

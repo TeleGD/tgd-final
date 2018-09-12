@@ -12,9 +12,9 @@ import general.ui.TextField;
 import general.ui.TextField.EnterActionListener;
 
 public class MenuMulti {
-	
+
 	private int longueurJeu=(int)(World.longueur*0.8);
-	
+
 	public int hauteurMenu=(int)(World.hauteur/1.45);
 	public int longueurMenu=World.longueur/2;
 	public int debutx=(longueurJeu-longueurMenu)/2+longueurMenu/15;
@@ -42,9 +42,9 @@ public class MenuMulti {
     private TrueTypeFont fontNbJoueurs = FontUtils.loadSystemFont("Arial", java.awt.Font.BOLD,20);
 
     public MenuMulti() {
-		
+
 	}
-	
+
 	public void init(final GameContainer container, StateBasedGame game) throws SlickException {
 		nbrJoueurs = new TextField(container, debutdroiteansx, debuty+pas-5,longueurMenu/20, TGDComponent.AUTOMATIC);
 		nbrJoueurs.setPlaceHolder("");
@@ -205,15 +205,15 @@ public class MenuMulti {
                     picker.render(container, game, g);
 
                 }
-				
-				
+
+
 			}
-			
+
 			boutonStart.render(container, game, g);
             boutonNbJoueurs.render(container, game, g);
 		}
 	}
-	
+
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		nbrJoueurs.update(container, game, delta);
 		boutonStart.update(container, game, delta);

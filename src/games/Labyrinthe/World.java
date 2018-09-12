@@ -20,9 +20,9 @@ public class World extends BasicGameState{
 
 	public final static String GAME_NAME="Labyrinthe";
 	public final static String GAME_FOLDER_NAME="Labyrinthe";
-	public final static String DIRECTORY_SOUNDS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_MUSICS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_SOUNDS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_MUSICS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="images"+File.separator+GAME_FOLDER_NAME+File.separator;
 
 	private static Labyrinth labyrinth;
 	private static MazeGenerator mazeGenerator;
@@ -30,19 +30,19 @@ public class World extends BasicGameState{
 	private ArrayList<Cell> cellTest;
 	private static int score;
 	private static StateBasedGame game;
-	
+
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
 		game=arg1;
 	}
-	
+
 	@Override
 	public void enter(GameContainer arg0, StateBasedGame arg1){
 		//Ici mettre tous les chargement d'image, creation de perso/decor et autre truc qui mettent du temps
 		labyrinth = new Labyrinth(10,15);
 		reset();
 	}
-	
+
 
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
@@ -75,11 +75,11 @@ public class World extends BasicGameState{
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static Labyrinth getLabyrinth(){
 		return labyrinth;
 	}
-	
+
 	@Override
 	public void keyPressed(int key, char c) {
 		player.keyPressed(key, c);
@@ -87,7 +87,7 @@ public class World extends BasicGameState{
 			game.enterState(MainMenu.ID);
 		}
 	}
-	
+
 	@Override
 	public void keyReleased(int key, char c) {
 		player.keyReleased(key, c);
@@ -104,6 +104,6 @@ public class World extends BasicGameState{
 	public static void setScore(int score) {
 		World.score = score;
 	}
-	
-	
+
+
 }

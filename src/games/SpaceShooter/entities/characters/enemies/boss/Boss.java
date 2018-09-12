@@ -25,17 +25,17 @@ public class Boss extends Enemy {
 	double startX;
 	double startY;
 	boolean arrive;
-	private String nameSprite = "ressources/images/SpaceShooter/projectiles/bossShot01.png";
+	private String nameSprite = "images/SpaceShooter/projectiles/bossShot01.png";
 
 	public Boss(double x, double y, Player player,ArrayList<Projectile> projectiles,Image[] img){
 		super(x,y,player,projectiles);
-		
+
 		this.x=-100;
 		this.y=-100;
 		arrive = false;
 		startX = x;
 		startY = y;
-		
+
 		World.addEnemy(this);
 		time=0;
 		this.width = 100;
@@ -99,7 +99,7 @@ public class Boss extends Enemy {
 		if (time>50) {
 			time=0;
 			projectiles.add(new StraightProjectile(nameSprite, x+width/2-10, y+height, 2, player, false,0,0.5));
-			
+
 			projectiles.add(new StraightProjectile(nameSprite, x+width/2+10, y+height, 2, player, false,0	,0.5));
 		}
 		time++;
@@ -108,7 +108,7 @@ public class Boss extends Enemy {
 	public void move(int delta){
 		if(!arrive)
 			entry();
-		
+
 		if(this.x+width >= 1280)
 			this.speedX=-0.1;
 		if(this.x < 0)
@@ -117,19 +117,19 @@ public class Boss extends Enemy {
 		moveX(delta);
 		moveY(delta);
 	}
-	
+
 	public void entry(){
 		if(x<startX)
 			speedX=0.1;
 		else
 			speedX=-0.1;
-		
+
 		if(y<startY)
 			speedY=0.1;
 		else
 			speedY=-0.1;
 
-		
+
 		if((Math.abs(x-startX) < 1 && Math.abs(y-startY) < 1)){
 			arrive = true;
 			speedX =0.1;

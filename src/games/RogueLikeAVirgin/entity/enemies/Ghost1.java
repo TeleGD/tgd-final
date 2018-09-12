@@ -13,11 +13,11 @@ public class Ghost1 extends Enemy{
 		atk=2;
 		compt=0;
 		try {
-			this.imgB=new Image("ressources/images/RogueLikeAVirgin/fantomeBas.png");
-			this.imgT=new Image("ressources/images/RogueLikeAVirgin/fantomeHaut.png");
-			this.imgR=new Image("ressources/images/RogueLikeAVirgin/fantomeDroite.png");
-			this.imgL=new Image("ressources/images/RogueLikeAVirgin/fantomeGauche.png");
-			
+			this.imgB=new Image("images/RogueLikeAVirgin/fantomeBas.png");
+			this.imgT=new Image("images/RogueLikeAVirgin/fantomeHaut.png");
+			this.imgR=new Image("images/RogueLikeAVirgin/fantomeDroite.png");
+			this.imgL=new Image("images/RogueLikeAVirgin/fantomeGauche.png");
+
 			this.sprite=imgB;
 		} catch (SlickException e) {
 			e.printStackTrace();
@@ -29,14 +29,14 @@ public class Ghost1 extends Enemy{
 
 	@Override
 	public void move(int delta) {
-		//se d�place aleatoirement et ne tient pas compte des murs 
+		//se d�place aleatoirement et ne tient pas compte des murs
 		compt++;
 		if(compt>50) {
 			//a la fin du compteur on choisis une nouvelle direction
 			chooseDir();
 			compt=0;
 		}
-		
+
 		//refaire chooseDir tant que l'on est trop pres des bords avec une vitesse inadequate
 		boolean ok=false;
 		while (!ok) {
@@ -55,14 +55,14 @@ public class Ghost1 extends Enemy{
 				ok=false;
 			}
 		}
-		
+
 		x+=speedX*delta;
 		y+=speedY*delta;
 		hitbox.setX(x+4);
 		hitbox.setY(y+5);
 	}
-	
-	
+
+
 	private void chooseDir() {
 		double a=Math.random();
 		if(a<0.125) {

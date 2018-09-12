@@ -112,6 +112,6 @@ public class LoadPlayerMenu extends Menu{
 	@Override
 	public void onOptionItemFocusedChanged(int position) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

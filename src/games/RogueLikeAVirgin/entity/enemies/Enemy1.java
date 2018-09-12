@@ -16,16 +16,16 @@ public class Enemy1 extends Enemy{
 
 	protected Polygon zoneR,zoneL,zoneT,zoneB;
 	protected double speed;
-	
+
 	public Enemy1(float x, float y) {
 		super(x, y);
 		hp=1;
 		try {
-			this.imgB=new Image("ressources/images/RogueLikeAVirgin/blobBas.png");
-			this.imgT=new Image("ressources/images/RogueLikeAVirgin/blobHaut.png");
-			this.imgR=new Image("ressources/images/RogueLikeAVirgin/blobDroite.png");
-			this.imgL=new Image("ressources/images/RogueLikeAVirgin/blobGauche.png");
-			
+			this.imgB=new Image("images/RogueLikeAVirgin/blobBas.png");
+			this.imgT=new Image("images/RogueLikeAVirgin/blobHaut.png");
+			this.imgR=new Image("images/RogueLikeAVirgin/blobDroite.png");
+			this.imgL=new Image("images/RogueLikeAVirgin/blobGauche.png");
+
 			this.sprite=imgB;
 		} catch (SlickException e) {
 			e.printStackTrace();
@@ -36,8 +36,8 @@ public class Enemy1 extends Enemy{
 		this.hitbox=new Rectangle (x+4,y+4,width-8,height-8);
 		speed = 0.15;
 	}
-	
-	
+
+
 	public void zoning() {
 		// creating the zones used to know the direction to go
 		zoneL=new Polygon();
@@ -56,12 +56,12 @@ public class Enemy1 extends Enemy{
 		zoneB.addPoint(x+width/2, y+height/2);
 		zoneB.addPoint(x+width/2-1000, y+height/2+1000);
 		zoneB.addPoint(x+width/2+1000, y+height/2+1000);
-		
+
 	}
-	
+
 	@Override
 	public void move(int delta) {
-		
+
 		if(zoneT.contains(World.player.getX()+World.player.getWidth(), World.player.getY()+World.player.getHeight())) {
 			speedX=0;
 			speedY=-speed;
@@ -75,13 +75,13 @@ public class Enemy1 extends Enemy{
 			speedX=speed;
 			speedY=0;
 		}
-		
-		
+
+
 		/*il faut voir pour les murs et bouger en cons�quence
 		 *
 		 * */
 		Case[][] c=World.map.getCases();
-		
+
 		if (speedX>0){
 			//going to the right
 			int a= (int) (x+speedX*delta+width)/36; //right border of the hitbox if we continue the movement (number in the grid)
@@ -95,7 +95,7 @@ public class Enemy1 extends Enemy{
 					speedY=-speed;
 				}
 			}
-			
+
 		}else if (speedX<0) {
 			//going to the left
 			int a= (int) (x+speedX*delta)/36; //left border of the hitbox if we continue the movement (number in the grid)
@@ -109,7 +109,7 @@ public class Enemy1 extends Enemy{
 					speedY=-speed;
 				}
 			}
-			
+
 		}else if(speedY>0) {
 			//going down
 			int a= (int) (y+speedY*delta+height)/36; //left border of the hitbox if we continue the movement (number in the grid)
@@ -123,7 +123,7 @@ public class Enemy1 extends Enemy{
 					speedX=-speed;
 				}
 			}
-			
+
 		}else {
 			//going top
 			int a= (int) (y+speedY*delta)/36; //left border of the hitbox if we continue the movement (number in the grid)
@@ -138,7 +138,7 @@ public class Enemy1 extends Enemy{
 				}
 			}
 		}
-		
+
 		if(speedX>0) {
 			sprite=imgR;
 		}else if (speedX<0) {
@@ -148,21 +148,21 @@ public class Enemy1 extends Enemy{
 		}else {
 			sprite=imgT;
 		}
-		
-		
+
+
 		x+=speedX*delta;
 		y+=speedY*delta;
 		hitbox.setX(x+4);
 		hitbox.setY(y+4);
 	}
-	
+
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		super.update(container, game, delta);
 		zoning();
 		//move(delta);
 	}
-	
+
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		super.render(container, game, g);

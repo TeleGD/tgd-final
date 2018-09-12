@@ -23,7 +23,7 @@ public class World extends BasicGameState {
 
 	public final static int ID = 42;
 	public final static String GAME_NAME = "Worms 3000";
-	
+
     public static Image imageBackground;
 
     private StateBasedGame game;

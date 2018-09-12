@@ -9,7 +9,7 @@ import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Enemy {
-	
+
 	private int x;
 	private int y;
 	private int nextPosX;
@@ -26,7 +26,7 @@ public class Enemy {
 	private int type;
 	private Player player;
 
-	
+
 	public Enemy(int posX, int posY, Level map, int wave, Player player) {
 		this.map=map;
 		this.player=player;
@@ -39,11 +39,11 @@ public class Enemy {
 		this.direction=0;
 		enemyType(wave);
 		World.enemies.add(this);
-		
+
 		shape=new Rectangle((x),(y),32, 32);
 	}
-	
-	
+
+
 	public void enemyType(int wave) {
 		if (wave%5 ==0) {
 			this.type=3;
@@ -51,7 +51,7 @@ public class Enemy {
 			this.speed=0.1;
 			this.attack=5;
 			try {
-				sprite = new Image("ressources/images/TowerDefense/boss.png");
+				sprite = new Image("images/TowerDefense/boss.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -63,7 +63,7 @@ public class Enemy {
 			this.speed=0.12;
 			this.attack=1;
 			try {
-				sprite = new Image("ressources/images/TowerDefense/enemy1.png");
+				sprite = new Image("images/TowerDefense/enemy1.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -75,24 +75,24 @@ public class Enemy {
 			this.speed=0.15;
 			this.attack=1;
 			try {
-				sprite = new Image("ressources/images/TowerDefense/enemy2.png");
+				sprite = new Image("images/TowerDefense/enemy2.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
-	
-	
+
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		g.drawImage(sprite, x, y);
 	}
-	
+
 
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		if ( this.x >= (int) map.getX(nextPosY) && this.direction==2 ) {
 			this.x = (int) map.getX(nextPosY);
-			calcNextPos(); 
+			calcNextPos();
 		}
 		else if ( this.x <= (int) map.getX(nextPosY) && this.direction==4 ) {
 			this.x =  (int) map.getX(nextPosY);
@@ -105,13 +105,13 @@ public class Enemy {
 		else if ( this.y <= (int) map.getY(nextPosX) && this.direction==1 ) {
 			this.y = (int) map.getY(nextPosX);
 			calcNextPos();
-		}	
+		}
 		move(delta);
 	}
 
-	
+
 	public void calcNextPos() {
-		
+
 		if ( (map.getCase(this.nextPosX-1,this.nextPosY)==0 || map.getCase(this.nextPosX-1,this.nextPosY)==3 ) && (this.nextPosX-1 != this.currentPosX || this.nextPosY != this.currentPosY) ) {
 			this.currentPosX = this.nextPosX; this.currentPosY = this.nextPosY;
 			this.nextPosX -= 1;
@@ -141,7 +141,7 @@ public class Enemy {
 		}
 	}
 
-	
+
 	public void move(int delta){
 		switch (this.direction) {
 			case 1 :
@@ -164,7 +164,7 @@ public class Enemy {
 				calcNextPos();
 		}
 	}
-	
+
 
 	public void takeDamage(int damage) {
 		this.life -= damage;
@@ -177,7 +177,7 @@ public class Enemy {
 	public Shape getShape() {
 		return shape;
 	}
-	
+
 	public double getX() {
 		return this.x;
 	}
@@ -186,5 +186,5 @@ public class Enemy {
 	public double getY() {
 		return this.y;
 	}
-	
+
 }

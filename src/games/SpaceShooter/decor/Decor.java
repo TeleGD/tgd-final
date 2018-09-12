@@ -18,7 +18,7 @@ public class Decor {
 		background=new Image[4];
 		for (int i=0;i<4;i++) {
 			try {
-				background[i]=new Image("ressources/images/SpaceShooter/background/Space_"+(i+1)+".png");
+				background[i]=new Image("images/SpaceShooter/background/Space_"+(i+1)+".png");
 			} catch (SlickException e) {
 				e.printStackTrace();
 			}
@@ -58,7 +58,7 @@ public class Decor {
 	/*private void createPlanet() {
 		planets.add(new Planet(Math.random()*1280,-500));
 	}*/
-	
+
 	public void reset() {
 		i=0;
 		y=0;

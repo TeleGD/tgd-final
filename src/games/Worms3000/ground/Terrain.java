@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Terrain {
 
-    public static final String FOLDER_LEVEL = "ressources/levels/Worms3000";
+    public static final String FOLDER_LEVEL = "levels/Worms3000";
     private ArrayList<GroundPolygon> grounds = new ArrayList<GroundPolygon>();
     private String levelName;
 
@@ -31,7 +31,7 @@ public class Terrain {
             float a=0,r=0,g=0,b=0;
 
             World.imageBackground  = new Image(PathUtils.UI+"Background/"+br.readLine());
-            
+
             while((ligne = br.readLine())!=null){
                 i++;
                 if(ligne.equals("new_polygone")){

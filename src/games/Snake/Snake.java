@@ -18,10 +18,10 @@ public class Snake {
 	public static int nbcasesl=128;
 	public int horizontal=World.longueur/nbcasesl;
 	public int vertical=World.hauteur/nbcasesh;
-	public ArrayList<Point> body=new ArrayList<Point>(); 
+	public ArrayList<Point> body=new ArrayList<Point>();
 	public Color couleur;
 	public int TDroite;
-	public int TGauche; 
+	public int TGauche;
 	protected boolean rightPress,leftPress;
 	public String nom;
 	public int speed;
@@ -30,8 +30,8 @@ public class Snake {
 	public boolean mort ;
 	public boolean inverse;
 	public int invincible;
-	
-	
+
+
 	public Snake(Color couleur,int x_init, int TDroite, int TGauche,int taille_init, String nom,int speed) {
 		this.couleur = couleur;
 		this.dir = 0;
@@ -48,22 +48,22 @@ public class Snake {
 			body.add(new Point(x_init,(nbcasesh-i)));
 		}
 	}
-	
+
 	public void GScore(int x) {
 
 		if (mort==false){
-		score += x; 
+		score += x;
 		}
 		}
-	
+
 	public void meurt(){
 		if (invincible==0){
 		mort = true;}
 	}
-	
+
 	public void move() {
 		if (body.size()!=0){
-		
+
 		Point ajout = null;
 		if (dir == 0) { //haut
 			if (body.get(0).y > 0) {
@@ -93,8 +93,8 @@ public class Snake {
 			else {
 				ajout = new Point(nbcasesl-29 , (body.get(0).y));}
 		}
-		
-		
+
+
 		body.remove((body.size()-1));
 		if (invincible!=0 && body.size()==0 ){
 			body.add(0,ajout);
@@ -106,18 +106,18 @@ public class Snake {
 			body.add(0,ajout);
 		}}
 	}
-	
+
 	/*public void turn() {
-		if (rightPress) { 
+		if (rightPress) {
 			dir = 1 ;
 			rightPress=false;
 		}
-		if (leftPress) { 
+		if (leftPress) {
 			dir = dir -1;
 			leftPress=false;
-		} 
+		}
 	}*/
-	
+
 	public void keyReleased(int key, char c) {
 
 		switch (key) {
@@ -133,8 +133,8 @@ public class Snake {
 
 		}
 	}
-	
-	
+
+
 	public void keyPressed(int key, char c) {
         if ((key == TDroite && !inverse) || (key == TGauche && inverse)) {
             rightPress = true;
@@ -149,31 +149,31 @@ public class Snake {
 
         }
 	}
-	
+
 	public void grandir(){
 		Point ajout = null;
-		if (dir == 0) { 
+		if (dir == 0) {
 			if (body.get(0).y != 0) {
 				ajout = new Point((body.get(0).x) , (body.get(0).y - 1));
 				}
 			else {
 				ajout = new Point((body.get(0).x) , nbcasesh);}
 		}
-		if (dir == 1) { 
+		if (dir == 1) {
 			if (body.get(0).x != nbcasesl-28 ) {
 				ajout = new Point((body.get(0).x + 1) , (body.get(0).y));
 			}else {
 				ajout = new Point(0 , body.get(0).y) ;
 				}
 		}
-		if (dir == 2) { 
+		if (dir == 2) {
 			if (body.get(0).y != nbcasesh) {
 				ajout = new Point((body.get(0).x) , (body.get(0).y + 1));}
 			else {
 				ajout = new Point((body.get(0).x) , 0);
 				}
 		}
-		if (dir == 3) { 
+		if (dir == 3) {
 			if (body.get(0).x != 0) {
 				ajout = new Point((body.get(0).x-1) , (body.get(0).y));
 				}
@@ -182,25 +182,25 @@ public class Snake {
 		}
 		body.add(0,ajout);
 	}
-	
+
 	public void retrecir(){
 		if((body.size() == 1))
 			this.meurt();
-		body.remove((body.size()-1)); 
+		body.remove((body.size()-1));
 	}
-	
+
 	public void plusRapide(){
 		speed += 7;
 	}
-	
+
 	public void plusLent(){
 		if (speed > 4){
 		speed -= 4;
 		}
 	}
-	
-	
-	
+
+
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		for  (int i = 0 ; i<body.size(); i++) {
 			g.setColor(couleur);
@@ -214,20 +214,19 @@ public class Snake {
 				couleur= new Color(couleur.r,couleur.g,couleur.b,0.5f);
 			else
 				couleur= new Color(couleur.r,couleur.g,couleur.b,1);
-			
+
 			invincible = invincible - 1;
 			}
-		
+
 		compteur += speed;
 		while(compteur >= 15){
 			move();
 			compteur -=15;
 		}
 			//turn();
-	}	
-	
-	
-	
-	
-}
+	}
 
+
+
+
+}

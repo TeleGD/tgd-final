@@ -36,14 +36,14 @@ public class Projectile {
 		alreadyDead = false;
 		this.collisionBox = new Rectangle((float)x,(float)y,width,height);
 		try {
-			sprite = new Image("ressources/images/TowerDefense/Arrow.png");
+			sprite = new Image("images/TowerDefense/Arrow.png");
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		faceTarget();
 	}
-	
+
 	public Projectile(double x, double y, Enemy target, double damage, int type){
 		/* Types :
 		 * 1 : Normal
@@ -60,12 +60,12 @@ public class Projectile {
 		switch(type){
 		default:
 			width = 9;
-			height = 16;	
+			height = 16;
 			//A ADAPTER A LA VITESSE DES ENNEMIS
 			this.speedX = 0.6;
-			this.speedY = 0.6;			
+			this.speedY = 0.6;
 			try {
-				sprite = new Image("ressources/images/TowerDefense/Arrow.png");
+				sprite = new Image("images/TowerDefense/Arrow.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -73,13 +73,13 @@ public class Projectile {
 			break;
 		case 3:
 			width = 16;
-			height = 16;	
+			height = 16;
 			//A ADAPTER A LA VITESSE DES ENNEMIS
 			this.speedX = 0.6;
 			this.speedY = 0.6;
 			this.radius = 64;
 			try {
-				sprite = new Image("ressources/images/TowerDefense/Bomb.png");
+				sprite = new Image("images/TowerDefense/Bomb.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -87,23 +87,23 @@ public class Projectile {
 			break;
 		case 2:
 			width = 9;
-			height = 16;	
+			height = 16;
 			//A ADAPTER A LA VITESSE DES ENNEMIS
 			this.speedX = 0.6;
 			this.speedY = 0.6;
 			try {
-				sprite = new Image("ressources/images/TowerDefense/Bolt.png");
+				sprite = new Image("images/TowerDefense/Bolt.png");
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
 		}
-		
+
 		this.collisionBox = new Rectangle((float)x,(float)y,width,height);
 		faceTarget();
 	}
-	
+
 	public Projectile(double x, double y, Enemy target, double damage, float radius){
 		this.x = x;
 		this.y = y;
@@ -112,39 +112,39 @@ public class Projectile {
 		this.type = 2;
 		this.radius = radius;
 		width = 16;
-		height = 16;	
+		height = 16;
 		this.target = target;
 		//A ADAPTER A LA VITESSE DES ENNEMIS
 		this.speedX = 0.6;
 		this.speedY = 0.6;
 		try {
-			sprite = new Image("ressources/images/TowerDefense/Bomb.png");
+			sprite = new Image("images/TowerDefense/Bomb.png");
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		this.collisionBox = new Rectangle((float)x,(float)y,width,height);
 		faceTarget();
 	}
-	
-	
+
+
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		checkForCollision();
 		move(delta,2);
 		if(alreadyDead) die();
 	}
-	
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		g.drawImage(sprite,(float) x,(float) y);
 		//g.setColor(Color.cyan);
 		//g.fillRect(collisionBox.getX(), collisionBox.getY(), collisionBox.getWidth(), collisionBox.getHeight());
 	}
-	
+
 	public void die(){
 		World.projectiles.remove(this);
 	}
-	
+
 	public float distanceToTarget(Enemy enn){
 		float targetX = (float) target.getX();
 		float targetY = (float) target.getY();
@@ -152,7 +152,7 @@ public class Projectile {
 		float ennY = (float) enn.getY();
 		return (float) Math.sqrt((ennX-targetX)*(ennX-targetX)+(ennY-targetY)*(ennY-targetY));
 	}
-	
+
 	public void checkForCollision(){
 		for(Enemy e : World.enemies){
 			if(collisionBox.intersects(e.getShape())){
@@ -174,7 +174,7 @@ public class Projectile {
 			}
 		}
 	}
-	
+
 	public void faceTarget(){
 		double tempX = target.getX();
 		if(x < tempX){
@@ -192,7 +192,7 @@ public class Projectile {
 		}else{
 			dirY = -1;
 		}
-		
+
 		//Sprite orientation :
 		int previousAngle = angle;
 		int dirnum = 3*dirY + dirX;
@@ -230,9 +230,9 @@ public class Projectile {
 		int deltaAngle = previousAngle - angle;
 		collisionBox.transform(Transform.createRotateTransform(deltaAngle));
 	}
-	
+
 	public void move(int dt){
-	//Equivalent to move(dt,2)	
+	//Equivalent to move(dt,2)
 		if(target != null){
 			faceTarget();
 		}else{
@@ -253,7 +253,7 @@ public class Projectile {
 			alreadyDead = true;
 		}
 	}
-	
+
 	public void move(int dt, int subdivision){
 		if(subdivision < 0){
 			subdivision = subdivision*-1;
@@ -274,5 +274,5 @@ public class Projectile {
 			alreadyDead = true;
 		}
 	}
-	
+
 }

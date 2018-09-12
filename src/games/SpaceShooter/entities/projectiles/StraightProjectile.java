@@ -12,13 +12,13 @@ public class StraightProjectile extends Projectile{
 
 
 	private Image sprite;
-	
+
 	public StraightProjectile(String nameSprite, double centerPointX, double centerPointY, int radius,Player player,boolean allied,double speedX,double speedY) {
 		super(centerPointX,centerPointY,radius,player,allied);
 		this.speedY = speedY;
 		this.speedX = speedX;
 		float a=(float)Math.acos(speedX);
-		
+
 		if(speedY<0)
 			a=-a;
 		try {
@@ -29,8 +29,8 @@ public class StraightProjectile extends Projectile{
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
@@ -49,8 +49,8 @@ public class StraightProjectile extends Projectile{
 			p.loseHP();
 		}
 	}
-	
-	
-	
+
+
+
 
 }

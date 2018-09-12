@@ -14,13 +14,13 @@ import games.SpaceShooter.entities.projectiles.Projectile;
 import games.SpaceShooter.entities.projectiles.StraightProjectile;
 
 public class Enemy1 extends Enemy{
-	
-	private double startX, startY; //Coordonnees autour desquels le mouvement s'effectue 
+
+	private double startX, startY; //Coordonnees autour desquels le mouvement s'effectue
 	private double range; //range du deplacement
 	private Image image;
 	private boolean place;
-	private String nameSprite = "ressources/images/SpaceShooter/projectiles/shot.png";
-	
+	private String nameSprite = "images/SpaceShooter/projectiles/shot.png";
+
 
 	public Enemy1(double x, double y,double range,double startX,double startY, Player player, ArrayList<Projectile> projectiles) {
 		super(x, y, player,projectiles);
@@ -35,22 +35,22 @@ public class Enemy1 extends Enemy{
 		this.height=60;
 		this.score=20;
 		try {
-			image=new Image("ressources/images/SpaceShooter/ship/enemy1.png");
+			image=new Image("images/SpaceShooter/ship/enemy1.png");
 			image=image.getScaledCopy(1);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
 		arg2.setColor(Color.red);
 		arg2.drawImage(image, (float)(x+width/2-image.getWidth()/2), (float)(y+height/2-image.getHeight()/2));
 		showLife(arg2);
 	}
-	
+
 
 	@Override
 	public void update(GameContainer arg0, StateBasedGame arg1, int delta) throws SlickException {
@@ -70,7 +70,7 @@ public class Enemy1 extends Enemy{
 		}
 		else                 // Sinon on suis le patern
 			move();
-		
+
 		moveX(delta);
 		moveY(delta);
 		colProj();
@@ -83,7 +83,7 @@ public class Enemy1 extends Enemy{
 		else if((Math.abs(this.x-this.startX) > range)&&(this.x>this.startX))
 			speedX = -0.25;
 	}
-	
-	
-	
+
+
+
 }

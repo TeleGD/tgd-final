@@ -15,7 +15,7 @@ public class Cell {
 	protected static Image NORMAL;
 	protected static Image MINE;
 	protected static Image BONUS;
-	
+
 	//Variables
 	private int x;
 	private int y;
@@ -23,7 +23,7 @@ public class Cell {
 	private Boolean deadly;
 	private Boolean hasBonus;
 	private boolean hasEnnemy;
-	
+
 	private int imageType;
 
 	//Constructeur
@@ -34,7 +34,7 @@ public class Cell {
 		this.deadly=d;
 		this.hasBonus=false;
 		this.hasEnnemy = false;
-		
+
 
 		if(NORMAL==null){
 			NORMAL= new Image(World.DIRECTORY_IMAGES+"Cell.png");
@@ -42,8 +42,8 @@ public class Cell {
 			BONUS=new Image(World.DIRECTORY_IMAGES+"Bonus.png");
 		}
 	}
-	
-	
+
+
 	//Getters et Setters
 	public int getX() {
 		return x;
@@ -97,9 +97,9 @@ public class Cell {
 	public void setHasBonus(Boolean hasBonus) {
 		this.hasBonus = hasBonus;
 	}
-	
-	
-	
+
+
+
 	//render et update
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
 		//Affichage
@@ -109,14 +109,14 @@ public class Cell {
 	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
 		if(deadly && contains)
 			World.getPlayer().setLives(0);
-		
+
 		if(hasBonus && contains){
 			World.setScore(World.getScore()+77);
 			World.getGrid().getCell(x, y).setHasBonus(false);
 			World.getGrid().getCell(x,y).setImageType(NORMAL_TYPE);
 			World.cat.play();
 		}
-			
+
 	}
-	
+
 }

@@ -13,12 +13,12 @@ public class Infected extends Character{
 
 	protected float range = 150;
 	protected boolean playerSpotted = false;
-	
+
 	protected float counter = 2000;
 	protected Vector2 randomWalkDirection = new Vector2(0,-1);
 	protected float runspeed;
 	protected float wlkspeed;
-	
+
 	public Infected(Image spr,Vector2 location ,float wlkspeed, float rnspeed) throws SlickException {
 		super(spr, wlkspeed);
 		health = new Compteur(100,100, location, new Vector2(10,11),null, new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/HealthBar.png"));
@@ -34,9 +34,9 @@ public class Infected extends Character{
 	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException
 	{
 		Vector2 moveDirection = new Vector2(0,0);
-		
-		
-		
+
+
+
 		if(playerSpotted)
 		{
 			walkSpeed = runspeed;
@@ -46,7 +46,7 @@ public class Infected extends Character{
 			walkSpeed = wlkspeed;
 			if(playerInSight())
 				playerSpotted = true;
-			
+
 			if(counter < 0)
 			{
 				counter = (float) (Math.random()*5000 + 1000);
@@ -58,10 +58,10 @@ public class Infected extends Character{
 				moveDirection = randomWalkDirection;
 			}
 		}
-		
+
 		walk(moveDirection);
-		
-		
+
+
 		if(isCollidingWithSomething())
 		{
 			if(collisionOn.equals(World.activePlayer))
@@ -69,19 +69,19 @@ public class Infected extends Character{
 				playerSpotted = true;
 				World.activePlayer.hurt(arg2/100f);
 			}
-			
+
 			if((collisionOn instanceof Infected)== false )
 				undoLocation();
 		}
-		
+
 		updateCollisionData();
 	}
-	
+
 	public boolean playerInSight()
 	{
 		float deltax = World.activePlayer.location.x - location.x;
 		float deltay = World.activePlayer.location.y - location.y;
-		
+
 		switch(direction)
 		{
 		case 0:
@@ -109,7 +109,7 @@ public class Infected extends Character{
 						return true;
 			break;
 		}
-		
+
 		return false;
 	}
 }

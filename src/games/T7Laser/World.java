@@ -27,12 +27,12 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 	public static int ID=4;
 
 	public final static String GAME_NAME="T7Laser";
-	
+
 	public final static String GAME_FOLDER_NAME="T7Laser";
-	public final static String DIRECTORY_SOUNDS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_MUSICS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
-	
+	public final static String DIRECTORY_SOUNDS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_MUSICS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="images"+File.separator+GAME_FOLDER_NAME+File.separator;
+
 	private static Player player;
 	private static Grid grid;
 	private static int score;
@@ -44,18 +44,18 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 	private boolean start = false;
 	private boolean disp = false;
 	private static StateBasedGame game;
-	
+
 	private static float renderScale = 1;
-	
+
 	private TextField textField;
 	private Button button;
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
-		//Ici ne mettre que des initialisations de variables 
+		//Ici ne mettre que des initialisations de variables
 		game=arg1;
-		
+
 	}
-	
+
 	@Override
 	public void enter(GameContainer container, StateBasedGame game) throws SlickException{
 		//Ici mettre tous les chargement d'image, creation de perso/decor et autre truc qui mettent du temps
@@ -69,14 +69,14 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 		selec = 0;
 		renderScale = 1;
 		start = false;
-		
+
 		initPerduView(container);
-		
+
 	}
-	
+
 
 	private void initPerduView(GameContainer container) {
-		
+
 		textField=new TextField(container,60,200,150,TGDComponent.AUTOMATIC);
 		textField.setMaxNumberOfLetter(13);
 		textField.setUpperCaseLock(true);
@@ -85,10 +85,10 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 		textField.setTextColor(Color.black);
 		textField.setPlaceHolder("Entrez un pseudo");
 		textField.setEnterActionListener(this);
-		
+
 		button=new Button("ENREGISTRER",container,textField.getX()+160,200,TGDComponent.AUTOMATIC,textField.getHeight());
 		button.setOnClickListener(this);
-		button.setPadding(10,15,10,15);		
+		button.setPadding(10,15,10,15);
 		button.setBorderWidth(2);
 		button.setBorderColor(Color.black);
 		button.setBackgroundColorEntered(Color.black);
@@ -100,7 +100,7 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		//Affichage
 		g.setColor(Color.white);
-		
+
 		g.fillRect(0,0,1280,720);
 		if (!start){
 			g.setColor(Color.black);
@@ -108,13 +108,13 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 		} else {
 			grid.render(container,game,g);
 			player.render(container,game,g);
-		
+
 			g.setColor(Color.black);
 			g.drawString("Score : "+getScore(), 88, 100);
 			g.drawString("Waves : "+grid.getWaveNumber(), 95, 150);
-		
+
 			if (player.isDead()){
-				
+
 				g.setColor(Color.black);
 				g.drawString("Rejouer", 100,400);
 				g.drawString("Quitter", 100,450);
@@ -149,14 +149,14 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 					end.play();
 				}
 			}
-			
+
 			if(player.isDead()){
-				
+
 				button.update(container, game, delta);
 				textField.update(container, game, delta);
 				textField.setHasFocus(true);
 
-				
+
 				if ((player.isMoveUp() && selec == 0) || (player.isMoveDown() && selec == 0)){
 					selec = 1;
 					player.setMoveUp(false);
@@ -183,7 +183,7 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 			}
 		}
 	}
-	
+
 	@Override
 	public void keyReleased(int key, char c) {
 		player.keyReleased(key, c);
@@ -203,11 +203,11 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 	public int getID() {
 		return ID;
 	}
-	
+
 	public static Grid getGrid(){
 		return grid;
 	}
-	
+
 	public static Player getPlayer(){
 		return player;
 	}
@@ -215,11 +215,11 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 	public static void reset() {
 		// TODO Auto-generated method stub
 	}
-	
+
 	public static float  getRenderScale(){
 		return renderScale;
 	}
-	
+
 	public static void setRenderScale(float d){
 		 renderScale = d;
 	}
@@ -232,7 +232,7 @@ public class World extends BasicGameState implements EnterActionListener,OnClick
 		World.score = score;
 	}
 
-	
+
 	@Override
 	public void onClick(TGDComponent component) {
 		TGDApi.updateScoreForGame(textField.getText(), 2, score);

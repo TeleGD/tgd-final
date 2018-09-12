@@ -42,7 +42,7 @@ public class World extends BasicGameState {
 	private StateBasedGame game;
 	private ArrayList<Character> letters= new ArrayList<Character>(Arrays.asList('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'));
 	private boolean maj;
-	
+
 	@Override
 	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
 		game=arg1;
@@ -59,13 +59,13 @@ public class World extends BasicGameState {
 		score=0;
 		compt=0;
 		name=null;
-		bossBody=new Image("ressources/images/SpaceShooter/ship/BossBody.png");
-		bossTowerL=new Image("ressources/images/SpaceShooter/ship/BossTowerL.png");
-		bossTowerR=new Image("ressources/images/SpaceShooter/ship/BossTowerR.png");
+		bossBody=new Image("images/SpaceShooter/ship/BossBody.png");
+		bossTowerL=new Image("images/SpaceShooter/ship/BossTowerL.png");
+		bossTowerR=new Image("images/SpaceShooter/ship/BossTowerR.png");
 		maj = false;
 	}
-	
-	
+
+
 	public static void reset() {
 		projectiles.clear();
 		Nico.reset(600,600,15,projectiles);
@@ -77,10 +77,10 @@ public class World extends BasicGameState {
 		score=0;
 		compt=0;
 		name="";
-		
-		
+
+
 	}
-	
+
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
 		decor.render(arg0, arg1, arg2);
@@ -133,7 +133,7 @@ public class World extends BasicGameState {
 					enemies.remove(i);
 				}
 			}
-	
+
 			if (compt==500) { //a ce moment on fait apparaitre le boss
 				Image i[]={bossBody,bossTowerL,bossTowerR};
 				new Boss(100,100,Nico,projectiles,i);
@@ -162,10 +162,10 @@ public class World extends BasicGameState {
 		}
 	}
 
-	
+
 	@Override
 	public void keyPressed(int key, char c) {
-		
+
 		if(Nico.getHP()>0) {
 			Nico.keyPressed(key, c);
 		} else if(key==Input.KEY_ENTER) {

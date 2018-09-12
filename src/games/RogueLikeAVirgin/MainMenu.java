@@ -15,8 +15,8 @@ import menus.Menu;
 
 public class MainMenu extends Menu{
 
-	public static int ID = -12;	
-	
+	public static int ID = -12;
+
 	public MainMenu(){
 		super.setTitrePrincipal("Rogue Like A Virgin");
 		super.setTitreSecondaire("Main Menu");
@@ -25,12 +25,12 @@ public class MainMenu extends Menu{
 		super.setCouleurClignote(Color.red);
 		super.setTempsClignote(400);
 	}
-	
-	
+
+
 	@Override
 	public void enter(GameContainer container, StateBasedGame game) throws SlickException {
 	}
-	
+
 	@Override
 	public void onOptionItemFocusedChanged(int position) {
 		time=System.currentTimeMillis();
@@ -60,7 +60,7 @@ public class MainMenu extends Menu{
 			break;
 		}
 	}
-	
+
 	@Override
 	public int getID() {
 		return ID;

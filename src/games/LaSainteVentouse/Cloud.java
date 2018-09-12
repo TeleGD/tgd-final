@@ -12,28 +12,28 @@ public class Cloud {
 	private double speed;
 
 	private Image cloud;
-	private String urlCloud = "ressources/images/LaSainteVentouse/cloud.png";
-	
+	private String urlCloud = "images/LaSainteVentouse/cloud.png";
+
 	public Cloud() throws SlickException{
     	cloud = new Image(urlCloud);
-    	
+
     	posx = 0;
     	posy = (int) (50 + Math.random() * 250);
     	speed=0.075+Math.random()*0.275;
 	}
-	
+
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		posx += delta*speed;
 	}
-	
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		g.drawImage(cloud,posx,posy);
 	}
-	
+
 	public int getPosX(){
 		return posx;
 	}
-	
+
 	public int getPosy(){
 		return posy;
 	}

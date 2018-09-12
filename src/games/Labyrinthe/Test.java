@@ -2,7 +2,7 @@ package games.Labyrinthe;
 
 public class Test {
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		int random = (int)Math.random()*4;
 		while (random == 0){

@@ -9,7 +9,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Player{
-	
+
 	private int x = 0;
 	private int y = 0;
 	private float width = 100;
@@ -19,13 +19,13 @@ public class Player{
 	private Image up;
 	private Image left;
 	private Image right;
-	
-	
+
+
 	private int lives = 1;
-	
+
 	private boolean moveLeft,moveRight,moveUp,moveDown  =false;
 	private boolean pressEnter = false;
-	
+
 	public Player() throws SlickException{
 		//position initiale
 		World.getGrid().getCell(0, 0).setContains(true);
@@ -37,8 +37,8 @@ public class Player{
 		this.right=new Image(World.DIRECTORY_IMAGES+"Char_right.png");
 		this.left=new Image(World.DIRECTORY_IMAGES+"Char_left.png");
 	}
-	
-	
+
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		//Affichage
 		image.draw(280+(x*100*World.getRenderScale())+360-World.getGrid().getColumns()*100*World.getRenderScale()/2,y*100*World.getRenderScale()+360-World.getGrid().getColumns()*100*World.getRenderScale()/2,100*World.getRenderScale(),100*World.getRenderScale());
@@ -48,7 +48,7 @@ public class Player{
 	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
 		callMove();
 	}
-	
+
 	public void callMove() throws SlickException{
 		if(moveUp && !moveDown){ //haut
 			move(x,y-1);
@@ -71,7 +71,7 @@ public class Player{
 			moveRight = false;
 		}
 	}
-	
+
 	public boolean isMoveUp() {
 		return moveUp;
 	}
@@ -84,21 +84,21 @@ public class Player{
 	public void setMoveUp(boolean b){
 		moveUp = b;
 	}
-	
+
 	public void setMoveDown(boolean b){
 		moveDown = b;
 	}
 
 	public void move(int x,int y){
-		
+
 		if(World.getGrid().MovePlayer(x, y, this)){
 			//if move worked
 			this.x = x;
 			this.y =y;
 		}
-			
+
 	}
-	
+
 	public void keyReleased(int key, char c) {
 		switch (key) {
 		//mouvement
@@ -118,7 +118,7 @@ public class Player{
 				setPressEnter(false);
 				break;
 			}
-		
+
 	}
 
 	public void keyPressed(int key,char c ) {
@@ -140,10 +140,10 @@ public class Player{
 			setPressEnter(true);
 			break;
 		}
-		
+
 	}
 
-	
+
 	public boolean isDead(){
 		return this.lives <= 0;
 	}
@@ -209,7 +209,7 @@ public class Player{
 	}
 
 
-	
-	
-	
+
+
+
 }

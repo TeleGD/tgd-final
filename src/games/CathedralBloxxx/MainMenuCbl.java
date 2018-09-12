@@ -16,7 +16,7 @@ import menus.Menu;
 
 public class MainMenuCbl extends Menu{
 
-	public static int ID = -9;	
+	public static int ID = -9;
 
 	private Image[] image= new Image[3];
 	public MainMenuCbl(){

@@ -14,8 +14,8 @@ import games.SpaceShooter.entities.projectiles.Projectile;
 import games.SpaceShooter.entities.projectiles.StraightProjectile;
 
 public class EnemyRandom extends Enemy{
-	
-	
+
+
 	private double xbox;
 	private double ybox;
 	private double widthbox;
@@ -29,8 +29,8 @@ public class EnemyRandom extends Enemy{
 	private Image image;
 	private boolean outOfBox;
 	private int i;
-	private String nameSprite = "ressources/images/SpaceShooter/projectiles/shot.png";
-	
+	private String nameSprite = "images/SpaceShooter/projectiles/shot.png";
+
 	public EnemyRandom(double x, double y, Player player, ArrayList<Projectile> projectiles, double xbox, double ybox, double widthbox, double heightbox) {
 		super(x, y, player,projectiles);
 		this.angle=0;
@@ -51,14 +51,14 @@ public class EnemyRandom extends Enemy{
 		this.score=40;
 		this.i=0;
 		try {
-			image=new Image("ressources/images/SpaceShooter/ship/enemy4.png");
+			image=new Image("images/SpaceShooter/ship/enemy4.png");
 			image=image.getScaledCopy((float) 0.5);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
 		arg2.setColor(Color.red);
@@ -66,7 +66,7 @@ public class EnemyRandom extends Enemy{
 		arg2.drawImage(image, (float)(x+width/2-image.getWidth()/2), (float)(y+height/2-image.getHeight()/2));
 		showLife(arg2);
 	}
-	
+
 	@Override
 	public void update(GameContainer arg0, StateBasedGame arg1, int delta) throws SlickException {
 		if(compt>50){
@@ -77,23 +77,23 @@ public class EnemyRandom extends Enemy{
 
 		}
 		compt++;
-		
+
 		if ((dirX != 'a') && (dirY != 'a')) {  // Si on est encore en phase de placement :
 			whereToGo(speedX, xbox+widthbox/2, this.x, dirX, 'x');
 			whereToGo(speedY, ybox+heightbox/2, this.y, dirY, 'y');
 		}
 		else                 // Sinon on suis le patern
 			move(delta);
-		
+
 		moveX(delta);
 		moveY(delta);
 		colProj();
 	}
-	
+
 	public void move(int delta) {
 		alea=Math.random();
 		angularSpeed=oldAngularSpeed;
-		
+
 		if (outOfBox) {
 			i+=1;
 			if (i>=40) {outOfBox=false;i=0;};

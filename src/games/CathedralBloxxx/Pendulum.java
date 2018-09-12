@@ -17,12 +17,12 @@ public class Pendulum extends BasicGameState{
 	private float speed;
 	private float theta;
 	private float length;
-	
+
 
 	private double omega;
 	private Block block;
 	private Image corde;
-	
+
 	public Pendulum(){
 		x=Main.longueur/2;
 		y=-1400;
@@ -33,7 +33,7 @@ public class Pendulum extends BasicGameState{
 		loadImage();
 		addBlock();
 	}
-	
+
 	public void loadImage(){
 		try {
 			corde=new Image(World.DIRECTORY_IMAGES+"corde.png").getScaledCopy(10, (int) length);
@@ -42,7 +42,7 @@ public class Pendulum extends BasicGameState{
 			e.printStackTrace();
 		}
 	}
-	
+
 
 	private void addBlock() {
 		try {
@@ -50,7 +50,7 @@ public class Pendulum extends BasicGameState{
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
 	}
 
 
@@ -64,11 +64,11 @@ public class Pendulum extends BasicGameState{
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		g.setColor(Color.white);
-		
+
 		g.drawImage(corde,x,y);
 		corde.setRotation((float) (-theta*180.0f/Math.PI));
 		corde.setCenterOfRotation(0, 0);
-		
+
 		block.render(container, game, g);
 
 
@@ -83,8 +83,8 @@ public class Pendulum extends BasicGameState{
 			block.setY(y+ (float)(length*Math.cos(theta))-block.getHeight()/2);
 			block.setAngle((float) (-theta*180/Math.PI));
 		}
-		
-		
+
+
 		speed+=0.01;
 		speed=Math.min(speed,18000);
 
@@ -119,11 +119,11 @@ public class Pendulum extends BasicGameState{
 	public float getY() {
 		return this.y;
 	}
-	
+
 	public void setY(int y) {
 		this.y=y;
 	}
-	
+
 	public void setX(int x) {
 		this.x=x;
 	}
@@ -158,7 +158,7 @@ public class Pendulum extends BasicGameState{
 	public void setInitialAngle(float initialAngle) {
 		this.initialAngle = initialAngle;
 	}
-	
+
 	public float getSpeed() {
 		return speed;
 	}

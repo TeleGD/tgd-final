@@ -32,9 +32,9 @@ public class World extends BasicGameState {
 	public final static String GAME_NAME="RogueLikeAVirgin";
 
 	public final static String GAME_FOLDER_NAME="RogueLikeAVirgin";
-	public final static String DIRECTORY_SOUNDS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_MUSICS="ressources/musics"+File.separator+GAME_FOLDER_NAME+File.separator;
-	public final static String DIRECTORY_IMAGES="ressources/images"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_SOUNDS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_MUSICS="musics"+File.separator+GAME_FOLDER_NAME+File.separator;
+	public final static String DIRECTORY_IMAGES="images"+File.separator+GAME_FOLDER_NAME+File.separator;
 
 
 	public static ArrayList<Enemy> enemies,enemiesTmp;
@@ -60,12 +60,12 @@ public class World extends BasicGameState {
 
 	@Override
 	public void init(GameContainer container, StateBasedGame arg1) throws SlickException {
-		//Ici ne mettre que des initialisations de variables 
+		//Ici ne mettre que des initialisations de variables
 		gameOn = false;
 		gameOver = false;
 		score = 0;
-		saxGuy=new Sound("ressources/musics/RogueLikeAVirgin/boss.ogg");
-		mainMusic=new Music("ressources/musics/RogueLikeAVirgin/music.ogg");
+		saxGuy=new Sound("musics/RogueLikeAVirgin/boss.ogg");
+		mainMusic=new Music("musics/RogueLikeAVirgin/music.ogg");
 		//Il faudra voir s'il faut bouger ces inits dans enter(...) si ca prend trop de temps
 		enemies = new ArrayList<Enemy>();
 		enemiesTmp = new ArrayList<Enemy>();
@@ -134,7 +134,7 @@ public class World extends BasicGameState {
 				}
 
 			}});
-		
+
 		exit = new Button("Quitter",container,786,384,TGDComponent.AUTOMATIC,TGDComponent.AUTOMATIC);
 		exit.setTextSize(32);
 		exit.setBackgroundColor(new Color(255,255,255));
@@ -147,7 +147,7 @@ public class World extends BasicGameState {
 			public void onClick(TGDComponent componenent) {
 				game.enterState(menus.MainMenu.ID, new FadeInTransition(), new FadeOutTransition());
 			}});
-		
+
 		atkUp = new Button("Puissance Up",container,780,570,TGDComponent.AUTOMATIC,30);
 		atkUp.setBackgroundColor(new Color(255,255,255));
 		atkUp.setTextColor(Color.black);
@@ -426,7 +426,7 @@ public class World extends BasicGameState {
 			case Input.KEY_ENTER :
 				name=name.replace("'", "''");
 				name=name.substring(0, name.length()-1);
-				
+
 				// Dao.addScore(name, score);
 				scoreTime=false;
 				break;

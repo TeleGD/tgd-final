@@ -16,16 +16,16 @@ import games.Survival.utils.Vector2;
 import games.Survival.worlds.World;
 
 public class TestObject extends Character{
-	
+
 	protected Vector2 nextPostionUI;
-	
+
 	protected float attackRange = 50;
 	protected float attackDamage = 1;
-	public ArrayList<Items> itemList;	
+	public ArrayList<Items> itemList;
 	public Compteur hunger;
 	public Compteur thirst;
 	protected Items activatedWeapons;
-	
+
 	public TestObject(Image spr) throws SlickException
 	{
 		super(spr, 5);
@@ -37,7 +37,7 @@ public class TestObject extends Character{
 		World.activeWorld.addUiGameObject(hunger);
 		thirst = new Compteur(80,100, new Vector2(800,650), new Vector2(10,11),new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/barre.png"), new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/WaterBar.png"));
 		World.activeWorld.addUiGameObject(thirst);
-		
+
 		location = new Vector2(0, 0);
 		sprite = spr;
 	}
@@ -48,12 +48,12 @@ public class TestObject extends Character{
 		this.nextPostionUI.add(new Vector2(70,0));
 		World.activeWorld.addUiGameObject(item);
 	}
-	
+
 	public void removeItem(Items Item) {
 		itemList.remove(Item);
-		
+
 	}
-	
+
 	@Override
 	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException
 	{
@@ -78,10 +78,10 @@ public class TestObject extends Character{
 			if (itemList.size()>2){
 				itemList.get(2).action();
 				}
-		
-		
+
+
 		walk(moveDirection);
-		
+
 		if(CustomInput.space)
 		{
 			Vector2 attackPoint = new Vector2(location.x, location.y);
@@ -100,24 +100,24 @@ public class TestObject extends Character{
 				attackPoint.add(new Vector2(attackRange,0));
 				break;
 			}
-			
+
 			for(GameObject i : overlapPoint(attackPoint))
 			{
 				if(i.equals(this) == false)
 					i.hurt(attackDamage);
 			}
 		}
-		
+
 		if(isCollidingWithSomething())
 		{
 			if((collisionOn instanceof Items)==false){
 				undoLocation();
 			}
-			
+
 		}
-		
+
 		Camera.follow(location, 5, arg2);
-		
+
 		updateCollisionData();
 	}
 }

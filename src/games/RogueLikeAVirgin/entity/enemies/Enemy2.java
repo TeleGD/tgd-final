@@ -10,11 +10,11 @@ public class Enemy2 extends Enemy1{
 		super(x, y);
 		this.hp=3;
 		try {
-			this.imgB=new Image("ressources/images/RogueLikeAVirgin/blobRoseBas.png");
-			this.imgT=new Image("ressources/images/RogueLikeAVirgin/blobRoseHaut.png");
-			this.imgR=new Image("ressources/images/RogueLikeAVirgin/blobRoseDroite.png");
-			this.imgL=new Image("ressources/images/RogueLikeAVirgin/blobRoseGauche.png");
-			
+			this.imgB=new Image("images/RogueLikeAVirgin/blobRoseBas.png");
+			this.imgT=new Image("images/RogueLikeAVirgin/blobRoseHaut.png");
+			this.imgR=new Image("images/RogueLikeAVirgin/blobRoseDroite.png");
+			this.imgL=new Image("images/RogueLikeAVirgin/blobRoseGauche.png");
+
 			this.sprite=imgB;
 		} catch (SlickException e) {
 			e.printStackTrace();

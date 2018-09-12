@@ -63,22 +63,22 @@ public class ScoreMenu extends BasicGameState{
 
 		g.setFont(fontTitreSecondaire);
 		g.drawString("Scores", Main.longueur/2-fontTitreSecondaire.getWidth("Scores")/2, 232);
-		
+
 		g.drawRect(Main.longueur/2-300, Main.hauteur/2-130, 600,37);
 
 		g.drawRect(Main.longueur/2-300, Main.hauteur-200, 600,37);
-		
+
 		g.setFont(fontConfirmText);
 		g.drawString("PRESS ENTER", Main.longueur/2-fontConfirmText.getWidth("PRESS ENTER")/2, 530);
-		
-		
+
+
 		g.setFont(fontItem);
 		//Affichage des 5 permiers nom avec le meilleur score
 		for (int i=0;i<5;i++) {
 			g.drawString(scores.get(i).getName(), 500, 300+35*i);
 			g.drawString(""+scores.get(i).getScore(), 650, 300+35*i);
 		}
-		
+
 	}
 
 	@Override

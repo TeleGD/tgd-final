@@ -15,20 +15,20 @@ import games.SpaceShooter.entities.projectiles.StraightProjectile;
 import games.SpaceShooter.util.Circle;
 
 public class Player extends games.SpaceShooter.entities.Movable implements Circle{
-	
+
 	private int radius;
 	private boolean upPress,downPress,leftPress,rightPress,hautbas,droitegauche;
 	private double speedBonus=0.3;
 	private Image image;
 	private Image imageInvul;
 	private int HP;
-	private ArrayList<Projectile> ProjectileList; 
+	private ArrayList<Projectile> ProjectileList;
 	private double compt;
 	private double speedshoot;
 	private int invulnerability;
-	private String nameSprite = "ressources/images/SpaceShooter/projectiles/playerShot.png";
-	
-	
+	private String nameSprite = "images/SpaceShooter/projectiles/playerShot.png";
+
+
 	public Player(double centerPointX, double centerPointY, int radius, ArrayList<Projectile> ProjectileList) {
 		this.x=centerPointX;
 		this.y=centerPointY;
@@ -38,14 +38,14 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 		this.speedshoot = 0.5;
 		this.invulnerability = 0;
 		try {
-			image=new Image("ressources/images/SpaceShooter/ship/En3.png");
+			image=new Image("images/SpaceShooter/ship/En3.png");
 			image=image.getScaledCopy((float) 0.05);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
 			e.printStackTrace();
 		}
 		try {
-			imageInvul = new Image("ressources/images/SpaceShooter/ship/En3Invulnerable.png");
+			imageInvul = new Image("images/SpaceShooter/ship/En3Invulnerable.png");
 			imageInvul=imageInvul.getScaledCopy((float) 0.05);
 		} catch (SlickException e) {
 			// nous donne la trace de l'erreur si on ne peut charger l'image correctement
@@ -67,7 +67,7 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 			arg2.drawImage(image, i*(10+image.getWidth()), 10);
 		}
 	}
-	
+
 
 	@Override
 	public void update(GameContainer arg0, StateBasedGame arg1, int delta) throws SlickException {
@@ -98,7 +98,7 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 		    break;
 		}
 	}
-	
+
 	@Override
 	public double getX() {
 		return x;
@@ -115,50 +115,50 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 	public int getRadius() {
 		return radius;
 	}
-	
+
 	public double getSpeedBonus() {
 		return speedBonus;
 	}
-	
+
 	public void setSpeedBonus(double newSpeedBonus) {
 		speedBonus=newSpeedBonus;
 	}
-	
+
 	public void upSpeedBonus() {
 		setSpeedBonus(speedBonus*1.2);
 	}
-	
+
 	public void downSpeedBonus() {
 		setSpeedBonus(speedBonus/1.2);
 	}
-	
+
 	public int getHP() {
 		return HP;
 	}
-	
+
 	public void loseHP() {
 		if (invulnerability==0){
 			HP -= 1;
 			invulnerability = 90;
 		}
-		
+
 		/*if (HP <= 0) {
 			System.out.println("you loose");
-			
+
 			System.exit(0);
-			
+
 		}*/
 	}
-	
+
 	public void Shoot() {
-		
+
 		ProjectileList.add(new StraightProjectile(nameSprite, x,y,2,this,true,0,-0.5));
 	}
-	
-	
+
+
 	private void move() {
 		//Pour determiner les vitesses horizontales et verticales
-		
+
 		speedY = 0;
 		if ((upPress && !downPress) || (upPress && downPress && hautbas)) {
 			if (y > radius) {
@@ -172,7 +172,7 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 				speedY = speedBonus;
 			}
 		}
-		
+
 		speedX = 0;
 		if ((leftPress && !rightPress) || (leftPress && rightPress && !droitegauche)) {
 			if (x > radius) {
@@ -187,7 +187,7 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 			}
 		}
 	}
-	
+
 	public void keyReleased(int key, char c) {
 		switch (key) {
 		case Input.KEY_UP:
@@ -207,7 +207,7 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 			break;
 		}
 	}
-	
+
 	public void keyPressed(int key, char c) {
 		switch (key) {
 		case Input.KEY_UP:
@@ -230,7 +230,7 @@ public class Player extends games.SpaceShooter.entities.Movable implements Circl
 			break;
 		}
 	}
-	
+
 	public void reset(double centerPointX, double centerPointY, int radius, ArrayList<Projectile> ProjectileList) {
 		this.HP=5;
 		this.x=centerPointX;

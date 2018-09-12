@@ -15,36 +15,36 @@ import games.SpaceShooter.entities.projectiles.Projectile;
 import games.SpaceShooter.entities.projectiles.StraightProjectileAnimated;
 
 public class BossTurret extends Enemy {
-	
+
 	double nextProjY;
 	double projY;
 	private Image img;
 	private float bossX,bossY;
-	private String nameSprite = "ressources/images/SpaceShooter/projectiles/bossShot1.png";
+	private String nameSprite = "images/SpaceShooter/projectiles/bossShot1.png";
 	private ArrayList <String> nameSpriteList;
-	
+
 	Enemy parent;
-	
+
 	public BossTurret(double x, double y, Player player,ArrayList<Projectile> projectiles,double speedX,double speedY, Enemy parent, Image img){
 		super(x,y,player,projectiles);
 		this.width = 20;
 		this.height = 20;
 		this.life=10;
 		this.lifeInit=10;
-		
+
 		this.nextProjY = 0.1;
 		this.projY = 0;
 		this.img=img;
 		this.parent = parent;
 		nameSpriteList = new ArrayList<String>();
-		nameSpriteList.add("ressources/images/SpaceShooter/projectiles/bossShot00.png");
-		nameSpriteList.add("ressources/images/SpaceShooter/projectiles/bossShot01.png");
-		nameSpriteList.add("ressources/images/SpaceShooter/projectiles/bossShot02.png");
-		nameSpriteList.add("ressources/images/SpaceShooter/projectiles/bossShot03.png");
+		nameSpriteList.add("images/SpaceShooter/projectiles/bossShot00.png");
+		nameSpriteList.add("images/SpaceShooter/projectiles/bossShot01.png");
+		nameSpriteList.add("images/SpaceShooter/projectiles/bossShot02.png");
+		nameSpriteList.add("images/SpaceShooter/projectiles/bossShot03.png");
 
-		
+
 	}
-	
+
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
 		if(!this.isDestructed()){
@@ -53,9 +53,9 @@ public class BossTurret extends Enemy {
 			arg2.drawImage(img, bossX-25, bossY-50);
 			showLife(arg2);
 		}
-		
+
 	}
-	
+
 	@Override
 	public void update(GameContainer arg0, StateBasedGame arg1, int delta) throws SlickException {
 		if(!isDestructed()){
@@ -70,21 +70,21 @@ public class BossTurret extends Enemy {
 			compt++;
 			colProj();
 		}
-		
+
 		move(delta);
-		
+
 	}
-	
+
 	public void move(int delta){
 		this.speedX = parent.getSpeedX();
 		this.speedY = parent.getSpeedY();
-		
+
 		moveX(delta);
 		moveY(delta);
 	}
-	
-	
-	
+
+
+
 	public void setBossPos(float x,float y) {
 		this.bossX=x;
 		this.bossY=y;

@@ -71,11 +71,11 @@ public class Enemy extends Movable implements Rectangle{
 		if(this.life<=0)
 			this.destructed=true;
 	}
-	
+
 	public boolean isDestructed() {
 		return destructed;
 	}
-	
+
 	public int getScore() {
 		return score;
 	}
@@ -90,7 +90,7 @@ public class Enemy extends Movable implements Rectangle{
 			}
 		}
 	}
-	
+
 	protected void whereToGo(double speed, double depart,double position, char dir,char axe) {
 		if ((position < depart)  && (dir != 'a')) {   //On n'est pas encore arrivés et On est a gauche (dessus) de l'objectif, il faut aller vers la droite (bas)
 			speed = 0.25;
@@ -101,10 +101,10 @@ public class Enemy extends Movable implements Rectangle{
 			else {
 				dir = 'd';
 			}
-			
+
 		}
 		else if (dir != 'a') {                   // Sinon on est a droite et on doit aller a gauche
-			speed = -0.25;	
+			speed = -0.25;
 			if (dir == 'd') {
 				dir = 'a';
 				speed = 0;
@@ -120,7 +120,6 @@ public class Enemy extends Movable implements Rectangle{
 			dirY = dir;
 			speedY = speed;
 		}
-			
+
 	}
 }
-

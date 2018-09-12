@@ -11,27 +11,27 @@ public class Bulle {
 	private int posy;
 
 	private Image bulle;
-	private String urlBulle = "ressources/images/LaSainteVentouse/bulle.png";
-	
+	private String urlBulle = "images/LaSainteVentouse/bulle.png";
+
 	public Bulle(int x, int y) throws SlickException{
     	bulle = new Image(urlBulle);
-    	
+
     	posx = x;
     	posy = 720 - y;
 	}
-	
+
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		posy -= 1;
 	}
-	
+
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		g.drawImage(bulle,posx,posy);
 	}
-	
+
 	public int getPosX(){
 		return posx;
 	}
-	
+
 	public int getPosy(){
 		return posy;
 	}

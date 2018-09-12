@@ -13,10 +13,10 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import java.util.*;
 
 public class World extends BasicGameState {
-	
+
     public final static int ID=80;
     public final static String GAME_NAME = "Snake";
-	
+
     public static int nbcasesh=72;
     public static int nbcasesl=128;
     public static MenuMulti menu;
@@ -40,8 +40,8 @@ public class World extends BasicGameState {
     static Sound sonMagic;
     static Sound sonMartien;
     static Sound sonPerdu;
-    
-    
+
+
     private Button replay,backMenu;
     private static Music soundMusicBackground;
     private static  boolean jeuTermine = false;
@@ -53,17 +53,17 @@ public class World extends BasicGameState {
         menu = new MenuMulti();
         menu.init(container, game);
 
-        
-        sonMouette = new Sound("ressources/musics/Snake/seagulls-chatting.ogg");
-        sonSncf = new Sound("ressources/musics/Snake/0564.ogg");
-        sonChute = new Sound("ressources/musics/Snake/0477.ogg");
-        sonCheval = new Sound("ressources/musics/Snake/horse-whinnies.ogg");
-        sonEclair = new Sound("ressources/musics/Snake/ChargedLightningAttack8-Bit.ogg");
-        sonMagic = new Sound("ressources/musics/Snake/FreezeMagic.ogg");
-        sonMartien = new Sound("ressources/musics/Snake/martian-gun.ogg");
-        sonPerdu = new Sound("ressources/musics/Snake/perdu.ogg");
-        
-        
+
+        sonMouette = new Sound("musics/Snake/seagulls-chatting.ogg");
+        sonSncf = new Sound("musics/Snake/0564.ogg");
+        sonChute = new Sound("musics/Snake/0477.ogg");
+        sonCheval = new Sound("musics/Snake/horse-whinnies.ogg");
+        sonEclair = new Sound("musics/Snake/ChargedLightningAttack8-Bit.ogg");
+        sonMagic = new Sound("musics/Snake/FreezeMagic.ogg");
+        sonMartien = new Sound("musics/Snake/martian-gun.ogg");
+        sonPerdu = new Sound("musics/Snake/perdu.ogg");
+
+
         replay = new Button(container,World.longueur - widthBandeau+20, World.hauteur-150,widthBandeau-40,40);
         replay.setText("REJOUER");
         replay.setBackgroundColor(Color.black);
@@ -199,7 +199,7 @@ public class World extends BasicGameState {
             if(!jeuTermine){
                 jeuTermine = isFini();
                 addBonus();
-              
+
 
 
                 for(int i=0;i<snakes.size();i++) {
@@ -325,7 +325,7 @@ public class World extends BasicGameState {
         snakes = new ArrayList<Snake>(Arrays.asList(snake));
 
         try {
-            soundMusicBackground=new Music("ressources/musics/Snake/hymne_russe.ogg");
+            soundMusicBackground=new Music("musics/Snake/hymne_russe.ogg");
             soundMusicBackground.loop(1,0.3f);
             jeuDemarre = true;
 
