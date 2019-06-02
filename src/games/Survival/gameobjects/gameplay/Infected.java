@@ -21,7 +21,7 @@ public class Infected extends Character{
 
 	public Infected(Image spr,Vector2 location ,float wlkspeed, float rnspeed) throws SlickException {
 		super(spr, wlkspeed);
-		health = new Compteur(100,100, location, new Vector2(10,11),null, new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/HealthBar.png"));
+		health = new Compteur(100,100, location, new Vector2(10,11),null, new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/healthbar.png"));
 		health.globalDelta = new Vector2(0,-100);
 		World.activeWorld.addGameObject(health);
 		this.wlkspeed = wlkspeed;

@@ -25,7 +25,7 @@ public class CityWorld extends World{
 	public void mapGeneration(int seed) throws SlickException
 	{
 		Image[] batiments = new Image[2];
-		batiments[0] = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/Batiments1.png");
+		batiments[0] = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/batiment1.png");
 		batiments[1] = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/batiment2.png");
 
 		Image road0 = new Image(SurvivalMain.DIRECTORY_IMAGES + "deccors/road0.png");
@@ -59,7 +59,7 @@ public class CityWorld extends World{
 			addGameObject(new MapObject(batiments[(int)(Math.random()+0.5f)], new Vector2(0,300+300+i*170)));
 		}
 
-		addGameObject(new MapObject(new Image(SurvivalMain.DIRECTORY_IMAGES + "/deccors/PanneauStop.png"), new Vector2(-140,-100), false));
+		addGameObject(new MapObject(new Image(SurvivalMain.DIRECTORY_IMAGES + "/deccors/panneaustop.png"), new Vector2(-140,-100), false));
 	}
 
 
@@ -96,8 +96,8 @@ public class CityWorld extends World{
 		}
 
 
-		addUiGameObject(new Compteur(30,100, new Vector2(500,650), new Vector2(10,11),new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/barre.png"), new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/HungryBar.png")));
-		addUiGameObject(new Compteur(80,100, new Vector2(800,650), new Vector2(10,11),new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/barre.png"), new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/WaterBar.png")));
+		addUiGameObject(new Compteur(30,100, new Vector2(500,650), new Vector2(10,11),new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/barre.png"), new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/hungrybar.png")));
+		addUiGameObject(new Compteur(80,100, new Vector2(800,650), new Vector2(10,11),new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/barre.png"), new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/waterbar.png")));
 
 
 		addUiGameObject(new MapObject(new Image(SurvivalMain.DIRECTORY_IMAGES + "ui/inventory.png"), new Vector2(500,690)));
